@@ -586,6 +586,7 @@ ul {
     align-items: center;
     width: 1440px;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .cards-container .cards {
@@ -623,4 +624,138 @@ ul {
     grid-row: 2 / span 3;
     width: 476px;
     height: 633px;
+}
+
+/* Footer Top */
+.footer-top {
+    background-color: #F0EEEA;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 300px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .title-wrap {
+    margin-top: 70px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.google-maps {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.google-maps iframe {
+    width: 1140px;
+    min-height: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.heading {
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer-hotel-info .sub-heading, 
+.footer-links ul,
+.help-center span {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.footer-hotel-info,
+.footer-links,
+.help-center,
+.socials {
+    line-height: 2;
+}
+
+.footer-container {
+    background: #000;
+    color: #F2F2F2;
+    position: relative;
+    padding-top: 300px;
+}
+
+.footer-wrap .wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-hotel-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.help-center {
+    display: flex;
+    flex-direction: column;
+}
+
+.socials span i {
+    margin-right: 10px;
+}
+
+/* Footer End */
+.footer-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.copyright, 
+.developer {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.copyright {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.developer {
+    margin-left: auto;
+    padding: 10px;
 }
