@@ -9,6 +9,7 @@
     <title>Hotel Rose Garden</title>
     <!-- Local CSS -->
     <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/main-media-query.css">
     <!-- Google Fonts / Montserrat-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Fonts / Cizel -->
@@ -24,26 +25,45 @@
     <div class="container">
         <!-- Header starts -->
         <header class="header-container">
+            <div class="video-container">
+                <video autoplay muted loop id="background-video">
+                    <source src="public/assets/video/restaurant.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
             <div class="header">
                 <nav class="nav">
-                    <ul class="nav-links nav-left">
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">Dining</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">Meetings & Events</a></li>
-                    </ul>
-
                     <div class="logo">
                         <img src="public/assets/img/logo.png" alt="Hotel Rose Garden">
                     </div>
 
-                    <ul class="nav-links nav-right">
+                    <ul class="nav-links">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Dining</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Meetings & Events</a></li>
                         <li><a href="#">Stay</a></li>
                         <li><a href="#">Amenities</a></li>
                         <li><a href="#">Franchise</a></li>
                         <li><a href="#">Contact Us</a></li>
                         <li><a href="#"><i class="fa-solid fa-user"></i> Sign In</a></li>
+
+                        <div class="nav-socials">
+                            <li><img src="public/assets/img/icons/facebook.svg" alt="facebook"></li>
+                            <li><img src="public/assets/img/icons/instagram.svg" alt="instagram"></li>
+                            <li><img src="public/assets/img/icons/whatsapp.svg" alt="whatsapp"></li>
+                            <li><img src="public/assets/img/icons/twitter.svg" alt="twitter"></li>
+                        </div>
                     </ul>
+
+                    <div class="hamburger-menu" id="hamburger-menu">
+                        <li><i class="fa-solid fa-bars fa-2xl" style="color: #fff;"></i></li>
+                    </div>
+
+                    <div class="close" id="close">
+                        <li><i class="fa-solid fa-xmark fa-2xl" style="color: #fff;"></i></li>
+                    </div>
                 </nav>
             </div>
 
@@ -448,13 +468,16 @@
                         <div class="heading">Follow Us</div>
 
                         <span>
-                            <i class="fa-brands fa-instagram"></i>
+                            <img src="public/assets/img/icons/facebook.svg" alt="facebook">
                         </span>
                         <span>
-                            <i class="fa-brands fa-facebook"></i>
+                            <img src="public/assets/img/icons/instagram.svg" alt="instagram">
                         </span>
                         <span>
-                            <i class="fa-brands fa-tiktok"></i>
+                            <img src="public/assets/img/icons/whatsapp.svg" alt="whatsapp">
+                        </span>
+                        <span>
+                            <img src="public/assets/img/icons/twitter.svg" alt="twitter">
                         </span>
                     </div>
                 </div>
@@ -475,5 +498,8 @@
             </div>
         </footer>
     </div>
+
+    <!-- Local JS -->
+     <script src="src/script/main.js" defer></script>
 </body>
 </html>

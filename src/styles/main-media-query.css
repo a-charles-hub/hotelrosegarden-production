@@ -1,0 +1,81 @@
+/* Main - Media Query */
+
+/* Mobile & Tablets*/
+@media screen and (max-width: 768px) {
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 0 1em;
+        position: fixed;
+        background: #000;
+        opacity: 1;
+        width: 100%; /* Full width */
+    }
+
+    .nav-socials {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        gap: 15px;
+    }
+
+    .nav-socials img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .nav-links {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        margin: 0 auto;
+        gap: 25px;
+
+        /* Hide initially */
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .nav-links.open {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .hamburger-menu li {
+        display: inline-block;
+        padding: 0 20px;
+    }
+
+    .close {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        padding: 2em;
+    }
+
+    .amenities {
+        display: none;
+    }
+
+    .google-maps {
+        display: none;
+    }
+}
