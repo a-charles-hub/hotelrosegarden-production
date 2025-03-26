@@ -97,11 +97,11 @@ ul {
     transform: scale(1.7);
 }
 
-.hamburger-menu li {
+.hamburger-menu {
     display: none;
 }
 
-.close li {
+.close {
     display: none;
 }
 
