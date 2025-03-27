@@ -433,7 +433,7 @@ ul {
 
 .heading {
     font-family: var(--body);
-    font-size: 32px;
+    font-size: 32px !important;
     font-weight: 300;
     letter-spacing: 2px;
 }
@@ -563,15 +563,13 @@ ul {
 
 .exclusive-venues .gallery img,
 .accomodations .gallery img {
-    width: 100%;
-    max-width: 800px;
+    width: 800px;
+    max-width: 100%;
     height: 100%;
-    max-height: 530px;
     object-fit: cover;
 }
 
 /* Accomodation */
-
 .accomodations-container {
     padding: 120px 0;
 }
@@ -602,47 +600,48 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1440px;
     margin: 0 auto;
     margin-bottom: 50px;
-    display: none;
+    max-width: 100%; /* Ensures it fits within the screen */
+    overflow: hidden; /* Prevents overflow issues */
 }
 
 .cards-container .cards {
     display: grid;
     grid-gap: 6px;
-    grid-template-columns: repeat(6, 235px); /* 6 equal columns */
-    grid-template-rows: repeat(4, 207px); /* 3 rows, each 207px tall */
+    grid-template-columns: repeat(6, minmax(0, 1fr)); /* Adjusts based on container width */
+    grid-template-rows: repeat(4, minmax(0, auto)); /* Adjust row height dynamically */
     grid-auto-flow: dense;
+    max-width: 100%;
 }
 
 .cards .card:first-child {
     grid-column: 1 / span 2;
     grid-row: 1 / span 3;
-    width: 476px;
-    height: 633px;
+    width: 100%; /* Make it flexible */
+    height: auto; /* Keep proportions */
+}
+
+.cards .card:last-child {
+    grid-column: 5 / span 2;
+    grid-row: 2 / span 3;
+    width: 100%; /* Make it flexible */
+    height: auto; /* Keep proportions */
 }
 
 .cards .card img {
-    width: 235px;
-    height: 207px;
+    width: 100%; /* Adjusts based on grid cell */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
     object-position: top;
 }
 
 .cards .card:first-child img,
 .cards .card:last-child img {
-    width: 476px;
-    height: 633px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     object-position: center;
-}
-
-.cards .card:last-child {
-    grid-column: 5 / span 2;
-    grid-row: 2 / span 3;
-    width: 476px;
-    height: 633px;
 }
 
 /* Footer Top */
@@ -699,7 +698,7 @@ ul {
 
 .footer-hotel-info .sub-heading, 
 .footer-links ul,
-.help-center span {
+.help-center {
     font-family: var(--font-body);
     font-size: 12px;
     font-weight: 400;

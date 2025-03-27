@@ -12,6 +12,7 @@ const openModal = () => {
 
     close.addEventListener('click', () => {
         navlinks.classList.remove('open');
+        navlinks.classList.add('close');
         close.style.display = 'none';
         hamburger.style.display = 'block';
     });
