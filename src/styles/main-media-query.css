@@ -12,6 +12,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        pointer-events: none; /* Prevents interaction */
     }
 
     .header-container {
@@ -81,7 +82,7 @@
 
     .hamburger-menu {
         display: block;
-        padding: 0 2em;
+        padding: 0 1em;
     }
 
     .close {
@@ -90,7 +91,7 @@
         top: 0;
         right: 0;
         z-index: 10;
-        padding: 3em;
+        padding: 2em;
         margin-top: -10px;
     }
 

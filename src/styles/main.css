@@ -266,6 +266,10 @@ ul {
     gap: 20px;
 }
 
+.featured-menu-mobile {
+    display: none;
+}
+
 .btn-menu-options {
     font-family: var(--font-body);
     font-size: 16px;
