@@ -5,6 +5,14 @@
     box-sizing: border-box;  
 }
 
+/* Root Variables */
+:root {
+    --font: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-body-poppins: 'Poppins', sans-serif;
+}
+
+
 body {
     background: #fff;
 }
@@ -17,248 +25,6 @@ a {
 ul {
     list-style: none;
 }
-
-/* Add New Menu Modal */
-.modal,
-.edit-menu-modal,
-.delete-menu-modal {
-    position: fixed; /* Make sure the modal covers the whole screen */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    z-index: 1001;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
-}
-
-.modal.show {
-    visibility: visible;
-    opacity: 1;
-}
-
-.modal .add-menu {
-    position: absolute;
-    width: 100%;
-    max-width: 750px; /* Optional: Limit the width */
-    height: 760px; /* Adjust as needed */
-    background: #F8F8F8;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    padding: 15px 30px;
-
-    /* Start below the viewport */
-    transform: translateY(100%);
-    opacity: 0;
-    transition: transform 0.3s ease-out;
-}
-
-/* Animate from bottom to center */
-.modal.show .add-menu {
-    transform: translateY(0); /* Move to the middle */
-    opacity: 1;
-}
-
-.modal-nav-top {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.modal .close {
-    cursor: pointer;
-}
-
-.modal-heading h3 {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.upload-box {
-    border: 1px dotted rgb(0, 0, 0, 0.5);
-    height: 260px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    margin-top: 15px;
-    background: #fff;
-}
-
-.upload-box i {
-    font-size: 60px;
-}
-
-.upload-box .flex-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-}
-
-.upload-box .sub-heading {
-    width: 230px;
-    text-align: center;
-}
-
-.post-details .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.post-details label {
-    font-size: 14px;
-    margin-top: 20px;
-    font-size: var(--navlinks);
-}
-
-.post-details input {
-    height: 40px;
-    border-radius: 5px;
-    background: #fff;
-    border: 1px solid rgb(0, 0, 0, 0.2);
-    outline: none;
-    padding: 10px;
-    font-size: var(--navlinks);
-}
-
-.post-details textarea {
-    width: 100%;  
-    height: 150px;
-    font-size: var(--navlinks);
-    resize: none;  
-    outline: none;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.modal-button {
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px 0;
-}
-
-.submit-btn {
-    width: 70px;
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    background: #4C81F1;
-    color: #fff;
-    cursor: pointer;
-}
-
-/* Edit Menu Modal */
-.edit-menu {
-    position: absolute;
-    width: 100%;
-    max-width: 260px; /* Optional: Limit the width */
-    height: 145px; /* Adjust as needed */
-    background: #F8F8F8;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.edit-menu ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.edit-menu li {
-    width: 235px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.edit-menu li:hover {
-    background: #4C81F1 !important;
-    color: #fff;
-}
-
-.edit.active {
-    background: #4C81F1 !important;
-    color: #fff;
-}
-
-.edit-menu-modal.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Delete Menu Modal */
-.delete-menu {
-    position: absolute;
-    width: 100%;
-    max-width: 350px;
-    height: 200px; 
-    background: #F8F8F8;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 15px 30px;
-}
-
-.delete-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.delete-menu .heading h3 {
-    font-size: 14px;
-    font-family: var(--font-body);
-    font-weight: 500;
-    color: rgb(0, 0, 0, 0.7);
-    text-align: center;
-}
-
-.confirmation {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.confirmation button {
-    width: 100px;
-    height: 35px;
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.confirmation .cancel {
-    border: 1px solid rgb(0, 0, 0, 0.1);
-}
-
-.confirmation .confirm {
-    background: #E63946;
-    color: #fff;
-    border: none;
-}
-
-.delete-menu-modal.show {
-    opacity: 1;
-    visibility: visible;
-}
-
 
 /* Profile Picture */
 .profile img {
@@ -623,7 +389,7 @@ ul {
     color: rgba(0, 0, 0, 0.25);
 }
 
-.menu-nav .add-menu {
+.menu-nav .add-menu-btn {
     width: 150px;
     height: 40px;
     background: #4C81F1;
@@ -632,9 +398,16 @@ ul {
     justify-content: center;
     color: #fff;
     font-weight: 600;
-    gap: 5px;
+    gap: 2px;
     border-radius: 10px;
     cursor: pointer;
+    border: none;
+    font-size: 14px;
+}
+
+.menu-nav .add-menu-btn:hover {
+    background: #3a6de0;
+    box-shadow: 0 4px 12px rgba(76, 129, 241, 0.4);
 }
 
 /* Menu List */
