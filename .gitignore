@@ -1,1 +1,40 @@
+<<<<<<< HEAD
 .env
+=======
+# Ignore node_modules (for Node.js or JavaScript dependencies)
+node_modules/
+
+# Ignore vendor (for PHP dependencies via Composer)
+vendor/
+
+# Ignore environment files
+.env
+
+# Ignore log files
+*.log
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignore build and dist directories (compiled JavaScript or CSS files)
+build/
+dist/
+
+# Ignore cache, temporary, or compiled files
+.cache/
+*.cache
+*.swp
+*.swo
+
+# Ignore IDE/editor specific files
+.idea/
+.vscode/
+nbproject/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore testing directories
+coverage/
+>>>>>>> 3e5c341a31151ea7a55e747d4dca234ee9b7cee2
