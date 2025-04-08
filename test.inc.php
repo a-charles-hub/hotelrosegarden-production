@@ -2,10 +2,10 @@
     require_once 'vendor/autoload.php';
 
 // Create a new Predis client instance with TLS
-$client = new Predis\Client([
+$client = new Client([
     'scheme' => 'tls', 
     'host'   => '127.0.0.1', 
-    'port'   => 6379, // TLS port
+    'port'   => 6380, // TLS port
 ]);
 
 // Set a value
