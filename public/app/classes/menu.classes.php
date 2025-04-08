@@ -23,7 +23,7 @@
                         'success' => true,
                         'data' => $menus,
                         'source' => 'redis',
-                        'message' => 'Data fetched from Redis cache'
+                        'message' => 'Data fetched from Redis Cache'
                     ];
                 }
                 else {
