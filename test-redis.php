@@ -1,7 +1,7 @@
 <?php
     namespace App\Config;
 
-    use Predis\Client;
+    use Predis\Client as RedisClient;
     require 'vendor/autoload.php';
 
     class AwsRedisConfig {
@@ -12,24 +12,25 @@
             $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
             $dotenv->load();
 
-            $this->redis = new Client([
-                'scheme' => 'tcp',
-                'host' => 'clustercfg.hotelrosegarden-cache-custom.gy1ak0.cac1.cache.amazonaws.com',
-                'port' => 6379
-            ]);
-
-            // Test Redis connection using PING command
-            $response = $this->redis->ping(); // Should return 'PONG' if the connection is working
-
-            if ($response === 'PONG') {
-                echo "Redis connection successful!";
-            } else {
-                echo "Redis connection failed.";
+            try {
+                $this->redis = new RedisClient([
+                    'scheme' => 'tcp',
+                    'host' => '127.0.0.1',
+                    'port' => 6379,
+                ]);
+            } catch (Exception $e) {
+                echo json_encode(['status' => 'error', 'message' => 'Redis connection failed: ' . $e->getMessage()]);
+                exit; // Exit if Redis connection fails
             }
+
+
         }
 
         public function getClient() {
             return $this->redis;
         }
     }
+
+        $redisConfig = new AwsRedisConfig();
+        $redis = $redisConfig->getClient();
     ?>

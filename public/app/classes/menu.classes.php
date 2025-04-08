@@ -1,6 +1,7 @@
 <?php
     use App\Config\AwsRedisConfig;
     require '../../../vendor/autoload.php';
+    require_once '../../../src/database/dbh.classes.php';
     
     class Menu extends Dbh {
         const MENU = "menu";
@@ -10,53 +11,64 @@
                 $redis = new AwsRedisConfig();
                 $redis_cache = $redis->getClient();
 
-                // Cached key
-                $cached_key = 'menu:all';
+                $cachedData = $redis_cache->get('menus');
 
-                // Check redis cache first
-                if($redis_cache->exists($cached_key)) {
-                    $cachedData = json_decode($redis_cache->get($cached_key), true);
+                if($cachedData) {
+                    $menus = json_decode($cachedData, true);
 
-                    $response = $this->redis->ping(); // Should return 'PONG' if the connection is working
-
-                    if ($response === '+PONG') {
-                        echo "Redis connection successful!";
-                    } else {
-                        echo "Redis connection failed.";
-                    }
-
-                    
-                    header('Content-Type: application/json');
-                    echo json_encode($response);
-                    exit();
-                }
-
-                // Start a transaction
-                $this->connect()->beginTransaction();
-
-                // Fetch data
-                $stmt = $this->connect()->prepare("SELECT * FROM menu");
-                $stmt->execute();
-
-                if($stmt->rowCount() > 0) {
-                    $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                    // If a transaction is in progress, save the changes
-                    if($this->connect()->inTransaction()) {
-                        $this->connect()->commit();
-                    }
+                    header('X-Data-Source: redis');
+                    header('Cache-Control: public, max-age=3600'); 
 
                     $response = [
                         'success' => true,
-                        'data' => $response,
-                        'message' => 'date fetched'
+                        'data' => $menus,
+                        'source' => 'redis',
+                        'message' => 'Data fetched from Redis cache'
                     ];
                 }
                 else {
-                    $response = [
-                        'success' => false,
-                        'message' => 'No data found.'
-                    ];
+                    // Start a transaction
+                    $this->connect()->beginTransaction();
+
+                    // Fetch data
+                    $stmt = $this->connect()->prepare("SELECT * FROM menu");
+                    $stmt->execute();
+
+                    if($stmt->rowCount() > 0) {
+                        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                        // Set data in an array
+                        $menus = [];
+
+                        foreach($data as $row) {
+                            $menus[] = [
+                                'title' => $row['menu_title'],
+                                'category' => $row['menu_category'],
+                                'url' => $row['menu_url']
+                            ];
+                        }
+
+                        // If a transaction is in progress, save the changes
+                        if($this->connect()->inTransaction()) {
+                            $this->connect()->commit();
+                        }
+
+                        // Store in redis for 1 hour
+                        $redis_cache->setex('menus', 3600, json_encode($menus));
+
+                        $response = [
+                            'success' => true,
+                            'data' => $menus,
+                            'source' => 'database',
+                            'message' => 'Data fetched from database and cached'
+                        ];
+                    }
+                    else {
+                        $response = [
+                            'success' => false,
+                            'message' => 'No data found.'
+                        ];
+                    }
                 }
 
 

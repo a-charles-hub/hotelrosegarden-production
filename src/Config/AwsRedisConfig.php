@@ -16,10 +16,9 @@
             try {
                 $this->redis = new RedisClient([
                     'scheme' => 'tcp',
-                    'host' => $_ENV['AWS_REDIS_CACHE_ENDPOINT'],
+                    'host' => '127.0.0.1',
                     'port' => 6379,
                 ]);
-
             } catch (Exception $e) {
                 echo json_encode(['status' => 'error', 'message' => 'Redis connection failed: ' . $e->getMessage()]);
                 exit; // Exit if Redis connection fails
