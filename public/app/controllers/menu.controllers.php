@@ -1,6 +1,12 @@
 <?php
     class MenuController extends Menu {
-        public function __construct() {
-            
+        private $category;
+
+        public function __construct($category) {
+            $this->category = $category;
+        }
+
+        public function get_menu() {
+            $this->fetch_menu($this->category);
         }
     }

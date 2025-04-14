@@ -1,62 +1,8 @@
-import { openModal, close } from "./modalUtils.js";
+import { reloadCache, fileInput, modalMenuConfirmation } from "./modalUtils.js";
 import { fetchMenu } from "./menu.js";  
+import { modalAddMenu, closeModals } from "./menu-management.js";  
 
-// Modal - Add Menu
-const modalAddMenu = () => {
-    const btn = document.getElementById('btn-add-menu');
-    const modal = document.getElementById('modal-add-menu');
-
-    // Open modal
-    openModal(modal, btn);
-}
-
-// Modal - Edit Menu
-const modalEditMenu = () => {
-    const editBtn = document.querySelectorAll('.open-modal');
-    const modal = document.getElementById('modal-edit-menu');
-
-    // Open modal
-    openModal(modal, editBtn);
-}
-
-// Modal - Delete menu
-const modalDeleteMenu = () => {
-    const deleteBtn = document.getElementById('delete-menu');
-    const modal = document.getElementById('modal-delete-menu');
-
-    // Open modal
-    openModal(modal, deleteBtn);
-}
-
-// Close Modals
-const closeModals = () => {
-    const closeBtn = document.querySelectorAll('.close-modal');
-    const modalContent = document.querySelectorAll('.modal-content');
-    const modal = document.querySelectorAll('.modal');
-
-    // Close modals
-    close(modal, modalContent, closeBtn);
-    
-}
-
-// Choosing file input
-const fileInput = () => {
-    const uploads = document.getElementById('upload-box');
-    const inputField = document.getElementById('file-input');
-    
-    uploads.addEventListener('click', () => {
-        inputField.click();
-    });
-}
-
-// Modal - Menu confirmation
-const modalMenuConfirmation = () => {
-    const modal = document.getElementById('modal-confirmation');
-
-    modal.classList.add('show')
-}
-
-const dragDrop = () => {
+const previewImage = () => {
     const fileInput = document.getElementById('file-input');
     const imagePreview = document.getElementById('image-preview');  // Corrected target to #image-preview
     
@@ -100,9 +46,19 @@ const addNewMenu = () => {
     const menuTitle = document.getElementById('title');
     const menuCategory = document.getElementById('category');
     const menuDescription = document.getElementById('description');
+    const submitBtn = document.getElementById('submit-btn');
+    const menuPrice = document.getElementById('price');
 
     menuForm.addEventListener('submit', async (e) => {
-        e.preventDefault();  // Prevent the form from submitting the default way
+        e.preventDefault();
+
+        // Disable the submit button initially to prevent double submissions
+        submitBtn.disabled = true;
+
+        if(!formValidation()){
+            submitBtn.disabled = false; // Re-enable submit button if validation fails
+            return;
+        }
 
         // Create a FormData object
         const formData = new FormData();
@@ -112,6 +68,7 @@ const addNewMenu = () => {
         formData.append('title', menuTitle.value);
         formData.append('category', menuCategory.value);
         formData.append('description', menuDescription.value);
+        formData.append('price', menuPrice.value)
 
         try {
             // Send the FormData via fetch()
@@ -132,25 +89,30 @@ const addNewMenu = () => {
                 const imagePreview = document.getElementById('image-preview');
                 const uploads = document.getElementById('uploads');
                 const uploadBox = document.getElementById('upload-box');
-    
+                const confirm = document.getElementById('confirmMenu');
+
                 // Close modal
                 modal.classList.remove('show');
 
                 // Display success message
-                modalMenuConfirmation();
-                menu.textContent = menuTitle.value + " added to menu.";
+                menuConfirmation();
+                menu.textContent = menuTitle.value + ' added to menu.';
+                confirm.addEventListener('click', () => {
+                    location.reload();
 
-                // Reset form
-                menuForm.reset();
-                fileInput.value = '';       // Explicitly clear file input
-                imagePreview.innerHTML = ''; // Clear image preview (if exists)
-                uploads.style.display="flex";
-                imagePreview.style.display="none";
-                uploadBox.style.border="1px dotted rgb(0, 0, 0, 0.5)";
+                    // Refresh cache
+                    const modal = document.getElementById('modal-add-menu');
+                    const modalBox = document.getElementById('add-menu-modal');
+                    reloadCache(modal, modalBox);
 
-                // Fetch and update data 
-                fetchMenu();
-
+                    // Reset form
+                    menuForm.reset();
+                    fileInput.value = '';       // Explicitly clear file input
+                    imagePreview.innerHTML = ''; // Clear image preview (if exists)
+                    uploads.style.display="flex";
+                    imagePreview.style.display="none";
+                    uploadBox.style.border="1px dotted rgb(0, 0, 0, 0.5)";
+                });
             } else {
                 console.log(result.error);
             }
@@ -158,13 +120,201 @@ const addNewMenu = () => {
             console.error("Upload failed: ", error);
         }
     });
+
+    
 };
 
+// Form validation 
+const formValidation = () => {
+    // Variables
+    const fileInput = document.getElementById('file-input');
+    const form = document.getElementById('uploadForm');
+    const menuCategory = document.getElementById('category');
+    const menuDescription = document.getElementById('description');
+    const uploadBox = document.getElementById('upload-box');
+    const fileError = document.getElementById('file-error');
+    const categoryError = document.getElementById('category-error');
+    const descriptionError = document.getElementById('description-error');
+    const titleError = document.getElementById('title-error');
+    const menuTitle = document.getElementById('title');
+
+    const price = document.getElementById('price');
+    const priceError = document.getElementById('price-error');
+
+    // Array for each input fields
+    const inputs = [
+        { element: fileInput, errorElement: fileError, message: 'Please select an image.', uploadBox: uploadBox},
+        { element: menuTitle, errorElement: titleError, message: 'Please enter menu title.' },
+        { element: menuCategory, errorElement: categoryError, message: 'Please select a category.' },
+        { element: menuDescription, errorElement: descriptionError, message: 'Please enter menu description.' },
+        { element: price, errorElement: priceError, message: 'Please enter menu price.' }
+    ];
+
+    let isValid = true; // Assume the form is valid initially
+
+    // Loop through each input and validat
+    inputs.forEach(input => {
+        if(!inputValidation(input.element, input.errorElement, input.message)) {
+            isValid = false; // If any input is invalid, set isValid to false
+
+            if(input.uploadBox) {
+                input.uploadBox.classList.add('error-input');
+            }
+        } 
+        else {
+            if(input.uploadBox) {
+                input.uploadBox.classList.remove('error-input');
+            }
+        }
+    });
+
+    console.log("Validation result:", isValid);
+    return isValid;
+}
+
+export const inputValidation = (element, errorElement, message) => {
+    const validate = () => {
+        // Variables to handle either file or text
+        const isFile = element.type === "file";
+        const isEmpty = isFile ? element.files.length === 0 : element.value.trim() === "";
+
+        if (isEmpty) {
+            errorElement.textContent = message;
+            errorElement.classList.add('error');
+            element.classList.add('error-input');
+            element.classList.remove('valid-input');
+            return false;
+        } else {
+            errorElement.textContent = "";
+            errorElement.classList.remove('error');
+            element.classList.remove('error-input');
+            element.classList.add('valid-input');
+            return true;
+        }
+    }
+
+    // Run validation immediately
+    if(!element.dataset.listenerAttached) {
+        element.addEventListener('input', validate);
+        element.dataset.listenerAttached = "true";
+    }
+
+    return validate();
+}
+
+const selectFile = () => {
+    const uploads = document.getElementById('upload-box');
+    const inputField = document.getElementById('file-input');
+
+    fileInput(uploads, inputField);
+}
+
+const menuConfirmation = () => {
+    const modal = document.getElementById('modal-confirmation');
+
+    modalMenuConfirmation(modal);
+}
+
+/*
+export const dishCategory = (data) => {
+    const categoryElement = document.querySelectorAll('#category-list li');
+    const menuContainer = document.getElementById('menu-container');
+
+    categoryElement.forEach(category => {
+        category.addEventListener('click', () => {
+            const selectedCategory = category.getAttribute('data-category');
+            menuContainer.innerHTML = ''; // Clear container before rendering
+    
+            if (selectedCategory === "All") {
+                console.log(selectedCategory);
+                data.forEach(item => {
+                    console.log(item);
+    
+                    // Construct HTML dynamically
+                    const card = document.createElement('div');
+                    card.classList.add('card'); // Add class for styling
+    
+                    // Construct image element
+                    const cardImage = document.createElement('div');
+                    cardImage.classList.add('card-image');
+                    const img = document.createElement('img');
+                    img.src = item.url; // Assuming `item.url` is where the image is located
+                    img.alt = item.title;
+                    cardImage.appendChild(img);
+                    card.appendChild(cardImage);
+    
+                    // Construct title
+                    const cardTitle = document.createElement('h4');
+                    cardTitle.classList.add('title');
+                    cardTitle.textContent = item.title;
+                    card.appendChild(cardTitle);
+    
+                    // Construct category
+                    const cardCategory = document.createElement('p');
+                    cardCategory.classList.add('card-category');
+                    cardCategory.textContent = item.category;
+                    card.appendChild(cardCategory);
+    
+                    // Construct price
+                    const cardPrice = document.createElement('p');
+                    cardPrice.classList.add('price');
+                    cardPrice.textContent = `$${item.price}/Serving`;
+                    card.appendChild(cardPrice);
+
+                    // Append the card to the menu container
+                    menuContainer.appendChild(card);
+                });
+            } else {
+                const filteredDishes = data.filter(item => item.category === selectedCategory);
+    
+                if (filteredDishes.length > 0) {
+                    filteredDishes.forEach(item => {
+                        console.log(item);
+    
+                        // Construct HTML for filtered items
+                        const card = document.createElement('div');
+                        card.classList.add('card'); // Add class for styling
+    
+                        const cardImage = document.createElement('div');
+                        cardImage.classList.add('card-image');
+                        const img = document.createElement('img');
+                        img.src = item.url;
+                        img.alt = item.title;
+                        cardImage.appendChild(img);
+                        card.appendChild(cardImage);
+    
+                        const cardTitle = document.createElement('h4');
+                        cardTitle.classList.add('menu-title');
+                        cardTitle.textContent = item.title;
+                        card.appendChild(cardTitle);
+    
+                        const cardCategory = document.createElement('p');
+                        cardCategory.classList.add('card-category');
+                        cardCategory.textContent = item.category;
+                        card.appendChild(cardCategory);
+    
+                        const cardPrice = document.createElement('p');
+                        cardPrice.classList.add('price');
+                        cardPrice.textContent = `$${item.price}/Serving`;
+                        card.appendChild(cardPrice);
+    
+                        menuContainer.appendChild(card);
+                    });
+                } else {
+                    menuContainer.innerHTML = '<p>No dishes found in this category.</p>';
+                }
+            }
+        });
+    });
+}
+*/
+
+
+
 // Call functions
-fileInput();
-addNewMenu();
-modalAddMenu();
-modalEditMenu();
-modalDeleteMenu();
+selectFile();
+modalAddMenu(); 
 closeModals();
-dragDrop();
+previewImage();
+addNewMenu();
+fetchMenu();

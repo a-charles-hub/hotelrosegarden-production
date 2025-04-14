@@ -30,3 +30,27 @@ export const close = (modals, modalBoxes, closeBtns) => {
         });
     });
 };
+
+export const reloadCache = (modal, modalBox) => {
+    // Close if user clicks outside of modal content
+    modal.addEventListener('click', (event) => {
+        if (!modalBox.contains(event.target)) {
+            modal.classList.remove('show');
+            location.reload();
+        }
+    });
+}
+
+// Choosing file input
+export const fileInput = (uploads, inputField) => {
+    if (!uploads || !inputField) return;
+    
+    uploads.addEventListener('click', () => {
+        inputField.click();
+    });
+}
+
+// Modal - Menu confirmation
+export const modalMenuConfirmation = (modal) => {
+    modal.classList.add('show')
+}

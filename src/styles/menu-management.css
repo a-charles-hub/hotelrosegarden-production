@@ -5,6 +5,18 @@
     box-sizing: border-box;  
 }
 
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 /* Root Variables */
 :root {
     --font: 'Cinzel', serif;
@@ -115,6 +127,7 @@ ul {
     border-radius: 50px;
     font-size: var(--navlinks);
     font-family: var(--font-body);
+    cursor: pointer;
 }
 
 .nav-links a {
@@ -123,12 +136,16 @@ ul {
 }
 
 .nav-links li:hover {
-    background: #F6F4F5;
+    background: #c8fcea;
 }
 
 /* JS Classlist */
 .active {
     background: #F6F4F5;
+}
+
+.default {
+    background: #c8fcea;
 }
 
 .nav-links i {
@@ -142,6 +159,11 @@ ul {
     padding: 0 30px;
     margin-left: 360px; 
     overflow: auto; 
+}
+
+.display {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* Top Nav */
@@ -286,7 +308,7 @@ ul {
     border-radius: 50%;
     width: 25px;
     height: 25px;
-    font-size: 10px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -418,6 +440,16 @@ ul {
     gap: 15px;
     justify-content: center;
     padding: 10px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px 0;
+    display: none; 
 }
 
 .menu .cards {

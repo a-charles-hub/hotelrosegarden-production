@@ -26,13 +26,8 @@ ul {
 }
 
 .hide {
-    visibility: hidden;
+    display: none;
     opacity: 0;
-}
-
-.show {
-    visibility: visible;
-    opacity: 1;
 }
 
 .modal.hidden {
@@ -46,22 +41,32 @@ ul {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
+    display: none;
     transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
 }
 
 .modal.show {
-    visibility: visible;
+    display: flex;
     opacity: 1;
 }
 
-.modal .add-menu {
-    position: absolute;
+.error-input {
+    border: 1px solid red !important;
+}
+
+.valid-input {
+    border: 1px solid green !important;
+}
+
+.error {
+    visibility: visible;
+    color: #E63946;
+}
+
+.add-menu {
     width: 100%;
-    max-width: 750px; /* Optional: Limit the width */
-    height: 100%;
-    max-height: 760px; /* Adjust as needed */
+    max-width: 750px;   
+    max-width: 750px;  
     background: #F8F8F8;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);

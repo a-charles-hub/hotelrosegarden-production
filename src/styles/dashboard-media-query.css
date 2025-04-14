@@ -1,0 +1,7 @@
+@media (max-width: 768px) {
+    .modal .add-menu {
+        max-width: 90%; /* Make the modal take 90% of the screen width */
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+        max-height: 80vh; /* Allow the modal to fit on smaller screens */
+    }
+}
