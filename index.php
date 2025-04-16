@@ -10,6 +10,8 @@
     <!-- Local CSS -->
     <link rel="stylesheet" href="src/styles/main.css">
     <link rel="stylesheet" href="src/styles/main-media-query.css">
+    <!-- Favicon -->
+    <link rel="icon" href="public/assets/img/logo.png">
     <!-- Google Fonts / Montserrat-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Fonts / Cizel -->
@@ -108,84 +110,16 @@
                     <button class="btn-menu-options">Desert</button>
                 </div>
 
-                <div class="cards">
-                    <div class="card-menu">
-                        <img src="https://www.inspiredtaste.net/wp-content/uploads/2016/07/Pancake-Recipe-2-1200.jpg" alt="">
+                <div id="menu-container"></div>
+
+                <div class="cards" id="cards" style="display:none;">
+                    <div class="card-menu" id="card-menu">
+                        <div class="card-image"></div>
 
                         <div class="text-wrap">
-                            <h3 class="menu-title">Pancakes</h3>
-
-                            <p class="menu-description">Fluffy pancakes topped with fresh blackberries and drizzled with sweet honey for a deliciously simple treat.</p>
-                        </div>
-                    </div>
-
-                    <div class="card-menu">
-                        <img src="https://www.realsimple.com/thmb/z3cQCYXTyDQS9ddsqqlTVE8fnpc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/real-simple-mushroom-black-bean-burgers-recipe-0c365277d4294e6db2daa3353d6ff605.jpg" alt="">
-
-                        <div class="text-wrap">
-                            <h3 class="menu-title">Veggie Burger</h3>
-
-                            <p class="menu-description">A flavorful plant-based patty with fresh veggies, grains, and spices, topped with lettuce, tomatoes, avocado, and a tangy vegan sauce. A healthy, satisfying alternative to the classic burger!</p>
-                        </div>
-                    </div>
-
-                    <div class="card-menu">
-                        <img src="https://feelgoodfoodie.net/wp-content/uploads/2024/02/Easy-Butter-Chicken-TIMG.jpg" alt="">
-
-                        <div class="text-wrap">
-                            <h3 class="menu-title">Butter Chicken</h3>
-
-                            <p class="menu-description">Tender pieces of chicken cooked in a rich, creamy tomato gravy, infused with aromatic spices and a touch of butter. A classic favorite that’s irresistibly smooth and flavorful.</p>
-                        </div>
-                    </div>
-
-                    <div class="card-menu">
-                        <img src="https://pipingpotcurry.com/wp-content/uploads/2024/04/Chicken-Biryani-Piping-Pot-Curry.jpg" alt="">
-
-                        <div class="text-wrap">
-                            <h3 class="menu-title">Chicken Biryani</h3>
-
-                            <p class="menu-description">Fragrant basmati rice cooked with tender chicken, infused with a blend of aromatic spices, and layered to perfection. A traditional, savory delight with every bite!</p>
-                        </div>
-                    </div>
-
-                    <div class="card-menu">
-                        <img src="https://www.allrecipes.com/thmb/FL-xnyAllLyHcKdkjUZkotVlHR8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/46822-indian-chicken-curry-ii-DDMFS-4x3-39160aaa95674ee395b9d4609e3b0988.jpg" alt="">
-
-                        <div class="text-wrap">
-                            <h3 class="menu-title">Chicken Curry</h3>
-
-                            <p class="menu-description">Fragrant basmati rice cooked with tender chicken, infused with a blend of aromatic spices, and layered to perfection. A traditional, savory delight with every bite!</p>
-                        </div>
-                    </div>
-
-                    <div class="card-menu">
-                        <img src="https://www.barossafinefoods.com.au/glide-cache/containers/main/2022_bff_beefbolardiced_korma_website-2-1653279635.jpg/6ffd0f4834a1a885f02408332646c610.jpg" alt="">
-
-                        <div class="text-wrap">
-                            <h3 class="menu-title">Beef Kurma</h3>
-
-                            <p class="menu-description">A mild, rich curry made with tender beef pieces simmered in a coconut-based gravy, with a blend of aromatic spices.</p>
-                        </div>
-                    </div>
-
-                    <div class="card-menu">
-                        <img src="https://preview.redd.it/tnwnsiwe1ch71.jpg?width=1080&crop=smart&auto=webp&s=9a0e8c8f4b8cf08aabf1c3839779e051aecc18b0" alt="">
-
-                        <div class="text-wrap">
-                            <h3 class="menu-title">South Indian Meal Platter</h3>
-
-                            <p class="menu-description">Potato-Mixed Greens Sabzi (Key Ingredients: Potatoes, Ginger, Garlic, Onions, Fenugreek Leaves, Spinach, Arugula, Carrot Greens, Turmeric, Asafoetida, Cumin Seeds)</p>
-                        </div>
-                    </div>
-
-                    <div class="card-menu">
-                        <img src="https://post.healthline.com/wp-content/uploads/2020/07/thali-indian-1296x728-header.jpg" alt="">
-
-                        <div class="text-wrap">
-                            <h3 class="menu-title">Thali</h3>
-
-                            <p class="menu-description">Experience the authentic flavors of India with our delicious and wholesome Thali. Each Thali is thoughtfully prepared with a balanced selection of dishes, offering a complete meal that satisfies your taste buds.</p>
+                            <h3 class="menu-title"></h3>
+                            <p class="menu-description"></p>
+                            <span class="price"></span>
                         </div>
                     </div>
                 </div>
@@ -514,6 +448,7 @@
     </div>
 
     <!-- Local JS -->
-     <script type="module" src="src/script/main.js" defer></script>
+    <script type="module" src="src/script/main.js" defer></script>
+    <script src="src/script/client.js"></script>
 </body>
 </html>

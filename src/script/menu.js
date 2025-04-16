@@ -1,6 +1,10 @@
 // Imports
 import { reloadCache } from "./modalUtils.js";
 import { menuModal } from './menu-management.js';
+import { search } from "./search.js";
+
+// Global variables
+let cachedData = []; // Data is from fetchMenu*) function. This cointains cached data. 
 
 export const fetchMenu = async () => {
     try {
@@ -10,14 +14,17 @@ export const fetchMenu = async () => {
 
         // Parse the response as JSON
         const result = await response.json();
+        cachedData = result;
 
         // Variables
         const menuContainer = document.getElementById('menu-container');
         const menu = document.getElementById('menu-template');
 
+        // Clear previous data
+        menuContainer.innerHTML = '';
         if(result.success === true) {
             result.data.forEach(menuItem => {
-                //console.log(menuItem);
+                console.log(menuItem);
                 
                 // Menu id
                 let currentMenuId = menuItem.menu_id;
@@ -33,6 +40,9 @@ export const fetchMenu = async () => {
             dishCount(result.data);
 
         }
+        else {
+            menuContainer.innerHTML = 'No dishes found. Want to add a new one?';
+        }
     } catch (error) {
         console.log("Unable to retrieve data: ", error);
     }
@@ -43,7 +53,7 @@ const dishCategory = (data) => {
     const menuContainer = document.getElementById('menu-container');
     const menu = document.getElementById('menu-template');
 
-    console.log(data);
+    //console.log(data);
 
     categoryElement.forEach(category => {
         category.addEventListener('click', () => {
@@ -196,3 +206,9 @@ export const deleteMenu = async (currentMenuId) => {
         }
     });
 }
+
+(async () => {
+    await fetchMenu();
+    const input = document.getElementById('search');
+    search(input, cachedData);
+})();

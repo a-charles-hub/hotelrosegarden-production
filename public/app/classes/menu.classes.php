@@ -1,11 +1,8 @@
 <?php
     use App\Config\AwsRedisConfig;
     require '../../../vendor/autoload.php';
-    require_once '../../../src/database/dbh.classes.php';
     
     class Menu extends Dbh {
-        const MENU = "menu";
-        
         public function fetch_menu() {
             try {
                 $redis = new AwsRedisConfig();
@@ -23,12 +20,13 @@
                         'message' => 'Data fetched from Redis Cache'
                     ];
                 }
+
                 else {
                     // Start a transaction
                     $this->connect()->beginTransaction();
 
                     // Fetch data
-                    $stmt = $this->connect()->prepare("SELECT id, menu_title, menu_category, menu_url, menu_price, COUNT(*) OVER (PARTITION BY menu_category) AS category_total FROM menu ORDER BY menu_title ASC");
+                    $stmt = $this->connect()->prepare("SELECT id, menu_title, menu_category, menu_description, menu_url, menu_price, COUNT(*) OVER (PARTITION BY menu_category) AS category_total FROM menu ORDER BY menu_title ASC");
                     $stmt->execute();
 
                     if($stmt->rowCount() > 0) {
@@ -47,7 +45,8 @@
                                 'url' => $row['menu_url'],
                                 'total_rows' => $all_dishes_count,
                                 'category_total' => $row['category_total'],
-                                'price' => $row['menu_price']
+                                'price' => $row['menu_price'],
+                                'description' => $row['menu_description']
                             ];
                         }
 
@@ -72,8 +71,17 @@
                             'message' => 'No data found.'
                         ];
                     }
-                }
 
+                    // Get latest updated_at
+                    $updated_at_stmt = $this->connect()->prepare("SELECT MAX(updated_at) as latest_update FROM menu");
+                    $updated_at_stmt->execute();
+                    $latest = $updated_at_stmt->fetch(PDO::FETCH_ASSOC);
+                    $version = $latest['latest_update'];
+
+                    // Save version to menu-version.json
+                    //file_put_contents("../../../src/json/menu-version.json", json_encode(['version' => $version], JSON_PRETTY_PRINT));
+
+                }
 
             } catch (Exception $e) {
                 // In case of an error, roll back the transaction
@@ -88,6 +96,9 @@
             // Output JSON response
             header('Content-Type: application/json');
             echo json_encode($response);
+
+            // Save all menu to menu.json
+            //file_put_contents("../../../src/json/menu.json", json_encode($response, JSON_PRETTY_PRINT));
             exit();
         }
     }

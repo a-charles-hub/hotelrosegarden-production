@@ -28,7 +28,7 @@
                 $cloud_front_url = 'https://d1juexuh03hmas.cloudfront.net/uploads/' . $file_name;
                 
                 // Upload metadata to the database
-                $stmt = $this->connect()->prepare("INSERT INTO menu (menu_title, menu_category, menu_description, menu_url, menu_price) VALUES (?, ?, ?, ?, ?)");
+                $stmt = $this->connect()->prepare("INSERT INTO menu (menu_title, menu_category, menu_description, menu_url, menu_price) VALUES (?,?,?,?,?)");
                 $stmt->execute([$menu_title, $menu_category, $menu_description, $cloud_front_url, $menu_price]);
                 
                 // If a transaction is in progress, save the changes

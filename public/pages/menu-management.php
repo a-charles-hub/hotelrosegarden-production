@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../src/styles/menu-management.css">
     <link rel="stylesheet" href="../../src/styles/modals.css">
     <link rel="stylesheet" href="../../src/styles/dashboard-media-query.css">
+    <link rel="stylesheet" href="../../src/styles/menu-management-media-query.css">
     <!-- Favicon -->
     <link rel="icon" href="../assets/img/logo.png">
     <!-- Google Fonts / Montserrat-->
@@ -75,7 +76,7 @@
         <div class="flex-container">
             <div class="top-nav">
                 <div class="search">
-                    <input type="search" placeholder="Search">
+                    <input type="search" placeholder="Search anything">
                     <i class="material-icons">search</i>
                 </div>
     
@@ -135,7 +136,7 @@
                                         </div>
                     
                                         <div class="menu-search">
-                                            <input type="search" placeholder="Search">
+                                            <input type="search" placeholder="Search menu" id="search" name="search">
                                             <i class="material-icons">search</i>
                                         </div>
                                     </div>

@@ -1,6 +1,7 @@
 import { reloadCache, fileInput, modalMenuConfirmation } from "./modalUtils.js";
 import { fetchMenu } from "./menu.js";  
 import { modalAddMenu, closeModals } from "./menu-management.js";  
+import { search } from "./search.js";
 
 const previewImage = () => {
     const fileInput = document.getElementById('file-input');
@@ -120,7 +121,6 @@ const addNewMenu = () => {
             console.error("Upload failed: ", error);
         }
     });
-
     
 };
 
@@ -215,106 +215,9 @@ const menuConfirmation = () => {
     modalMenuConfirmation(modal);
 }
 
-/*
-export const dishCategory = (data) => {
-    const categoryElement = document.querySelectorAll('#category-list li');
-    const menuContainer = document.getElementById('menu-container');
-
-    categoryElement.forEach(category => {
-        category.addEventListener('click', () => {
-            const selectedCategory = category.getAttribute('data-category');
-            menuContainer.innerHTML = ''; // Clear container before rendering
-    
-            if (selectedCategory === "All") {
-                console.log(selectedCategory);
-                data.forEach(item => {
-                    console.log(item);
-    
-                    // Construct HTML dynamically
-                    const card = document.createElement('div');
-                    card.classList.add('card'); // Add class for styling
-    
-                    // Construct image element
-                    const cardImage = document.createElement('div');
-                    cardImage.classList.add('card-image');
-                    const img = document.createElement('img');
-                    img.src = item.url; // Assuming `item.url` is where the image is located
-                    img.alt = item.title;
-                    cardImage.appendChild(img);
-                    card.appendChild(cardImage);
-    
-                    // Construct title
-                    const cardTitle = document.createElement('h4');
-                    cardTitle.classList.add('title');
-                    cardTitle.textContent = item.title;
-                    card.appendChild(cardTitle);
-    
-                    // Construct category
-                    const cardCategory = document.createElement('p');
-                    cardCategory.classList.add('card-category');
-                    cardCategory.textContent = item.category;
-                    card.appendChild(cardCategory);
-    
-                    // Construct price
-                    const cardPrice = document.createElement('p');
-                    cardPrice.classList.add('price');
-                    cardPrice.textContent = `$${item.price}/Serving`;
-                    card.appendChild(cardPrice);
-
-                    // Append the card to the menu container
-                    menuContainer.appendChild(card);
-                });
-            } else {
-                const filteredDishes = data.filter(item => item.category === selectedCategory);
-    
-                if (filteredDishes.length > 0) {
-                    filteredDishes.forEach(item => {
-                        console.log(item);
-    
-                        // Construct HTML for filtered items
-                        const card = document.createElement('div');
-                        card.classList.add('card'); // Add class for styling
-    
-                        const cardImage = document.createElement('div');
-                        cardImage.classList.add('card-image');
-                        const img = document.createElement('img');
-                        img.src = item.url;
-                        img.alt = item.title;
-                        cardImage.appendChild(img);
-                        card.appendChild(cardImage);
-    
-                        const cardTitle = document.createElement('h4');
-                        cardTitle.classList.add('menu-title');
-                        cardTitle.textContent = item.title;
-                        card.appendChild(cardTitle);
-    
-                        const cardCategory = document.createElement('p');
-                        cardCategory.classList.add('card-category');
-                        cardCategory.textContent = item.category;
-                        card.appendChild(cardCategory);
-    
-                        const cardPrice = document.createElement('p');
-                        cardPrice.classList.add('price');
-                        cardPrice.textContent = `$${item.price}/Serving`;
-                        card.appendChild(cardPrice);
-    
-                        menuContainer.appendChild(card);
-                    });
-                } else {
-                    menuContainer.innerHTML = '<p>No dishes found in this category.</p>';
-                }
-            }
-        });
-    });
-}
-*/
-
-
-
 // Call functions
 selectFile();
 modalAddMenu(); 
 closeModals();
 previewImage();
 addNewMenu();
-fetchMenu();

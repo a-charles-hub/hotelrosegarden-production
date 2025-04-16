@@ -1,0 +1,67 @@
+{
+    "success": true,
+    "data": [
+        {
+            "menu_id": 592,
+            "title": "Asd",
+            "category": "Chicken Dishes",
+            "url": "https:\/\/d1juexuh03hmas.cloudfront.net\/uploads\/Screenshot 2025-04-11 053625.png",
+            "total_rows": 6,
+            "category_total": 2,
+            "price": "2.99",
+            "description": "Asd"
+        },
+        {
+            "menu_id": 584,
+            "title": "Beef Wellington",
+            "category": "Beef Dishes",
+            "url": "https:\/\/d1juexuh03hmas.cloudfront.net\/uploads\/Screenshot 2025-04-11 054722.png",
+            "total_rows": 6,
+            "category_total": 1,
+            "price": "42.99",
+            "description": "Asd"
+        },
+        {
+            "menu_id": 594,
+            "title": "Chicken Biryani",
+            "category": "Chicken Dishes",
+            "url": "https:\/\/d1juexuh03hmas.cloudfront.net\/uploads\/Screenshot 2025-04-11 054722.png",
+            "total_rows": 6,
+            "category_total": 2,
+            "price": "29.99",
+            "description": "Fragrant basmati rice layered with tender, marinated chicken slow-cooked with aromatic spices, saffron, caramelized onions, and fresh herbs. Served with raita and a side of our signature biryani sauce. A rich and flavorful classic."
+        },
+        {
+            "menu_id": 590,
+            "title": "F",
+            "category": "Desserts",
+            "url": "https:\/\/d1juexuh03hmas.cloudfront.net\/uploads\/Screenshot 2025-04-01 003807.png",
+            "total_rows": 6,
+            "category_total": 1,
+            "price": "2.99",
+            "description": "Asd"
+        },
+        {
+            "menu_id": 589,
+            "title": "Fasd",
+            "category": "Breakfast",
+            "url": "https:\/\/d1juexuh03hmas.cloudfront.net\/uploads\/Screenshot 2025-04-11 054722.png",
+            "total_rows": 6,
+            "category_total": 1,
+            "price": "2.99",
+            "description": "Asd"
+        },
+        {
+            "menu_id": 591,
+            "title": "Fasd",
+            "category": "Side Dishes",
+            "url": "https:\/\/d1juexuh03hmas.cloudfront.net\/uploads\/Screenshot 2025-03-21 200222.png",
+            "total_rows": 6,
+            "category_total": 1,
+            "price": "9.99",
+            "description": "Asd"
+        }
+    ],
+    "source": "redis",
+    "message": "Data fetched from Redis Cache"
+}

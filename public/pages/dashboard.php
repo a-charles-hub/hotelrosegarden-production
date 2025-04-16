@@ -41,7 +41,7 @@
             <!-- Navlinks starts -->
             <div class="nav-links">
                 <ul>
-                    <li class="default" id="dashboard">
+                    <li id="dashboard">
                         <a href="#"><i class="material-icons">dashboard</i>Dashboard</a>
                     </li>
                     <li id="manage-reservations">
