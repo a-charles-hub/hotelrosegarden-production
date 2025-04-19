@@ -1,3 +1,5 @@
+import { paginationMenu } from "./main.js";
+
 const clientFetch = async () => {
     try {
         // Variables
@@ -32,7 +34,7 @@ const displayCardsClient = (data, cardContainer, menu) => {
 
     // Clone hidden templates
     const menuClone = menu.cloneNode(true);
-    menuClone.style.display = "block";
+    menuClone.classList.add('show');
     
     // Find elements inside the clone
     const img = document.createElement('img');
@@ -44,6 +46,8 @@ const displayCardsClient = (data, cardContainer, menu) => {
     // Fill contents
     img.src = data.url;
     img.alt = data.title;
+    img.style.margin="0 5px";
+    img.setAttribute('loading', 'lazy');
 
     menuTitle.textContent = data.title;
     description.textContent = data.description;
@@ -54,6 +58,9 @@ const displayCardsClient = (data, cardContainer, menu) => {
     cardImage.appendChild(img); 
     // Append the card
     cardContainer.appendChild(menuClone);
+
+    // Call pagination function to apply pagination
+    paginationMenu();
 
 }
 

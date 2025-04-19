@@ -54,3 +54,18 @@ export const fileInput = (uploads, inputField) => {
 export const modalMenuConfirmation = (modal) => {
     modal.classList.add('show')
 }
+ 
+export const backToTop = () => {
+    const btn = document.getElementById('back-to-top');
+
+    window.onscroll = () => {
+        btn.style.display = (document.documentElement.scrollTop > 300) ? "block" : "none";
+    };
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" 
+        });
+    });
+}

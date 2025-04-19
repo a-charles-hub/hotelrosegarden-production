@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="src/styles/main-media-query.css">
     <!-- Favicon -->
     <link rel="icon" href="public/assets/img/logo.png">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <!-- Google Fonts / Montserrat-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Fonts / Cizel -->
@@ -28,10 +30,13 @@
         <!-- Header starts -->
         <header class="header-container">
             <div class="video-container">
+                <!--
                 <video autoplay muted loop id="background-video">
-                    <source src="public/assets/video/restaurant.mp4" type="video/mp4">
+                    <source src="public/assets/video/restaurant.mp4" type="video/mp4" role="presentation">
                     Your browser does not support the video tag.
                 </video>
+                -->
+                <div class="video-overlay"></div>
             </div>
 
             <div class="header">
@@ -41,15 +46,15 @@
                     </div>
 
                     <ul class="nav-links">
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">Dining</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">Meetings & Events</a></li>
-                        <li><a href="#">Stay</a></li>
-                        <li><a href="#">Amenities</a></li>
-                        <li><a href="#">Franchise</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#"><i class="fa-solid fa-user"></i> Sign In</a></li>
+                        <li><a href="">Overview</a></li>
+                        <li><a href="">Dining</a></li>
+                        <li><a href="">Menu</a></li>
+                        <li><a href="">Meetings & Events</a></li>
+                        <li><a href="">Stay</a></li>
+                        <li><a href="">Amenities</a></li>
+                        <li><a href="">Franchise</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href=""><i class="fa-solid fa-user"></i> Sign In</a></li>
 
                         <div class="nav-socials">
                             <li><img src="public/assets/img/icons/facebook.svg" alt="facebook"></li>
@@ -60,16 +65,29 @@
                     </ul>
 
                     <div class="hamburger-menu" id="hamburger-menu">
-                        <li><i class="fa-solid fa-bars fa-xl" style="color: #fff;"></i></li>
+                       <i class="fa-solid fa-bars fa-xl" style="color: #fff;"></i>
                     </div>
 
                     <div class="close" id="close">
-                        <li><i class="fa-solid fa-xmark fa-xl" style="color: #fff;"></i></li>
+                        <i class="fa-solid fa-xmark fa-xl" style="color: #fff;"></i>
                     </div>
                 </nav>
             </div>
 
             <div class="card-container">
+                <div class="hero-section">
+                    <div class="hero-heading">
+                        <h3>A Place That Feels Like Coming  Home</h3>
+                    </div>
+                    <div class="hero-subheading">
+                        <h4>Where comfort meets tradition in every corner. More than just a visit — it’s a feeling of belonging.</h4>
+                    </div>
+
+                    <div class="book-now">
+                        <button id="book-now">Our menu</button>
+                    </div>
+                </div>  
+
                 <div class="card">
                     <div class="card-left">
                         <div class="card-group">
@@ -93,15 +111,13 @@
             </div>
         </header>
 
-        <!-- Featured Menu -->
-         <div class="featured-menu-container">
+        <!-- Featured Menu 
+        <div class="featured-menu-container">
             <div class="featured-menu">
                 <div class="title-wrap">
                     <h4 class="descriptor">Signature Dishes, Exquisite Flavors</h4>
                     <h2 class="title">Featured Menu</h2>
                 </div>
-
-                <button class="explore-menu-btn">Explore Our Menu</button>
 
                 <div class="featured-menu-options">
                     <button class="btn-menu-options">Small Plates</button>
@@ -112,33 +128,38 @@
 
                 <div id="menu-container"></div>
 
-                <div class="cards" id="cards" style="display:none;">
+                <div class="cards hide" id="cards">
                     <div class="card-menu" id="card-menu">
                         <div class="card-image"></div>
 
                         <div class="text-wrap">
-                            <h3 class="menu-title"></h3>
+                            <div class="group">
+                                <h3 class="menu-title"></h3>
+                                <span class="price"></span>
+                            </div>
+                            
                             <p class="menu-description"></p>
-                            <span class="price"></span>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="pagination-container">
                     <div class="pagination">
-                        <div class="previous" id="previous-btn">
-                            <i class="fa-solid fa-arrow-left"></i> <span>Previous</span>
+                        <div class="previous">
+                            <button id="previous-btn" class="btn previous-btn"><i class="fa-solid fa-backward"></i> <span class="prev-text">Prev</span></button>
                         </div>
                         <div class="page-numbers" id="page-numbers">
 
                         </div>
-                        <div class="next" id="next-btn">
-                            <span>Next</span> <i class="fa-solid fa-arrow-right"></i> 
+                        <div class="next">
+                            <button id="next-btn" class="btn btn-next"><span class="next-text">Next</span> <i class="fa-solid fa-forward"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
-         </div>
+        </div>
+        -->
 
         <!-- Hotel History -->
         <div class="hotel-history-container">
@@ -172,7 +193,7 @@
 
             <div class="amenities">
                 <div class="amenity indoor-dining">
-                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/201006124420-indoor-dining-covid-19.jpg?q=x_0,y_374,h_2268,w_4032,c_crop/h_833,w_1480" alt="">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/201006124420-indoor-dining-covid-19.jpg?q=x_0,y_374,h_2268,w_4032,c_crop/h_833,w_1480" alt="" loading="lazy">
 
                     <div class="text-wrap">
                         <div class="heading-wrap">
@@ -185,7 +206,7 @@
                 </div>
 
                 <div class="amenity outdoor-dining">
-                    <img src="https://media.architecturaldigest.com/photos/618a7d98d4dc025cc87e313d/4:3/w_5336,h_4002,c_limit/Exterior%203.jpg" alt="">
+                    <img src="https://media.architecturaldigest.com/photos/618a7d98d4dc025cc87e313d/4:3/w_5336,h_4002,c_limit/Exterior%203.jpg" alt="" loading="lazy">
 
                     <div class="text-wrap">
                         <div class="heading-wrap">
@@ -200,20 +221,20 @@
         </div>
 
         <!-- Rose Pavilion -->
-         <div class="rose-pavilion-container">
+         <div class="rose-pavilion-container show-element">
             <div class="rose-pavilion">
                 <div class="gallery">
                     <div class="main-image">
-                        <img src="https://img.cdn-pictorem.com/uploads/collection/R/RT5LRO2KGR/900_Socratubik_IMG_1857071712.jpg" alt="">
+                        <img src="https://img.cdn-pictorem.com/uploads/collection/R/RT5LRO2KGR/900_Socratubik_IMG_1857071712.jpg" alt="" loading="lazy">
                     </div>
 
                     <div class="thumnails">
                         <div class="thumnail">
-                            <img src="https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/PlaygroundHero.jpg" alt="">
+                            <img src="https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/PlaygroundHero.jpg" alt="" loading="lazy">
                         </div>
 
                         <div class="thumnail">
-                            <img src="https://thearchitectsdiary.com/wp-content/uploads/2023/11/Cricket-Stadiums-in-India-09-1024x768.webp" alt="">
+                            <img src="https://thearchitectsdiary.com/wp-content/uploads/2023/11/Cricket-Stadiums-in-India-09-1024x768.webp" alt="" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -251,7 +272,7 @@
                 
                 <div class="gallery">
                     <div class="main-image">
-                        <img src="https://cdn.shortpixel.ai/spai/w_1082+q_glossy+ret_img+to_webp/www.eventsource.ca/blog/wp-content/uploads/2022/04/Barn-1906.jpg" alt="">
+                        <img src="https://cdn.shortpixel.ai/spai/w_1082+q_glossy+ret_img+to_webp/www.eventsource.ca/blog/wp-content/uploads/2022/04/Barn-1906.jpg" alt="" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -262,7 +283,7 @@
             <div class="accomodations">
                 <div class="gallery">
                     <div class="main-image">
-                        <img src="https://media.edinburgh.org/wp-content/uploads/2023/04/23154056/The-Balmoral-Executive-View-Room-e1682260891619.jpg" alt="">
+                        <img src="https://media.edinburgh.org/wp-content/uploads/2023/04/23154056/The-Balmoral-Executive-View-Room-e1682260891619.jpg" alt="" loading="lazy">
                     </div>
                 </div>
 
@@ -292,46 +313,46 @@
                 <div class="cards-container">
                     <div class="cards">
                         <div class="card">
-                            <img src="https://i.pinimg.com/originals/fe/33/28/fe3328080d12ae8f28a3c7e7fd4f946f.jpg" alt="">
+                            <img src="https://i.pinimg.com/originals/fe/33/28/fe3328080d12ae8f28a3c7e7fd4f946f.jpg" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://th.bing.com/th/id/R.1a32300a1f3d69708d49b08c6eb89693?rik=lt4UftWfwKgojw&pid=ImgRaw&r=0" alt="">
+                            <img src="https://th.bing.com/th/id/R.1a32300a1f3d69708d49b08c6eb89693?rik=lt4UftWfwKgojw&pid=ImgRaw&r=0" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://wallpaperaccess.com/full/1317096.jpg" alt="">
+                            <img src="https://wallpaperaccess.com/full/1317096.jpg" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://images.pexels.com/photos/958546/pexels-photo-958546.jpeg?cs=srgb&dl=food-healthy-vegetables-958546.jpg&fm=jpg" alt="">
+                            <img src="https://images.pexels.com/photos/958546/pexels-photo-958546.jpeg?cs=srgb&dl=food-healthy-vegetables-958546.jpg&fm=jpg" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://s4.scoopwhoop.com/dan/spicyfood1/15.jpg" alt="">
+                            <img src="https://s4.scoopwhoop.com/dan/spicyfood1/15.jpg" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://wallpapercave.com/wp/wp7137084.jpg" alt="">
+                            <img src="https://wallpapercave.com/wp/wp7137084.jpg" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://th.bing.com/th/id/R.8a37848f44b93aa9e7f924a937660259?rik=%2bw9XHaoDdl5o%2fQ&pid=ImgRaw&r=0" alt="">
+                            <img src="https://th.bing.com/th/id/R.8a37848f44b93aa9e7f924a937660259?rik=%2bw9XHaoDdl5o%2fQ&pid=ImgRaw&r=0" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://www.cricketbio.com/wp-content/uploads/2019/02/Playing-Cricket-Games-With-Your-Children-Can-Improve-Their-Life-at-School.jpg" alt="">
+                            <img src="https://www.cricketbio.com/wp-content/uploads/2019/02/Playing-Cricket-Games-With-Your-Children-Can-Improve-Their-Life-at-School.jpg" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://sukhis.com/app/uploads/2022/04/image3-4.jpg" alt="">
+                            <img src="https://sukhis.com/app/uploads/2022/04/image3-4.jpg" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://th.bing.com/th/id/R.50a981d1df95ddc3b6b174244f86f309?rik=FoHJGxVjvJ8uLQ&riu=http%3a%2f%2fstacyhart.com%2fwp-content%2fuploads%2f2017%2f12%2f14-14393-post%2fthe-knot-real-wedding-indian-wedding-events-cherished-philadelphia-wedding-photographer-deerfield-wedding-photos_0074.jpg&ehk=eoKDwT92s6HCoQpyhoVzgsdMlaWSfY4Y%2bYQTwMig590%3d&risl=&pid=ImgRaw&r=0" alt="">
+                            <img src="https://th.bing.com/th/id/R.50a981d1df95ddc3b6b174244f86f309?rik=FoHJGxVjvJ8uLQ&riu=http%3a%2f%2fstacyhart.com%2fwp-content%2fuploads%2f2017%2f12%2f14-14393-post%2fthe-knot-real-wedding-indian-wedding-events-cherished-philadelphia-wedding-photographer-deerfield-wedding-photos_0074.jpg&ehk=eoKDwT92s6HCoQpyhoVzgsdMlaWSfY4Y%2bYQTwMig590%3d&risl=&pid=ImgRaw&r=0" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://lh5.googleusercontent.com/p/AF1QipNCSnkbwgun6igcdoMmF_4nyCOb-f255CV1qtYp=w408-h306-k-no" alt="">
+                            <img src="https://lh5.googleusercontent.com/p/AF1QipNCSnkbwgun6igcdoMmF_4nyCOb-f255CV1qtYp=w408-h306-k-no" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://d1vp8nomjxwyf1.cloudfront.net/wp-content/uploads/sites/9/2019/11/29145839/Quarto-Twin-2.jpg" alt="">
+                            <img src="https://d1vp8nomjxwyf1.cloudfront.net/wp-content/uploads/sites/9/2019/11/29145839/Quarto-Twin-2.jpg" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://img.freepik.com/premium-photo/indian-family-eating-food-dining-table-home-restaurant-having-meal-together_466689-12715.jpg?w=826" alt="">
+                            <img src="https://img.freepik.com/premium-photo/indian-family-eating-food-dining-table-home-restaurant-having-meal-together_466689-12715.jpg?w=826" alt="" loading="lazy">
                         </div>
                         <div class="card">
-                            <img src="https://www.visitdubai.com/-/media/gathercontent/article/d/dubais-romantic-restaurants/fallback-image/dubais-romantic-restaurants-hero-eventorganiser-aug-2022.jpg" alt="">
+                            <img src="https://www.visitdubai.com/-/media/gathercontent/article/d/dubais-romantic-restaurants/fallback-image/dubais-romantic-restaurants-hero-eventorganiser-aug-2022.jpg" alt="" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -378,7 +399,7 @@
                         </div>
 
                         <div class="footer-hotel-info">
-                            <div class="heading">Hotel Rose Garden</div>
+                            <div class="footer-heading">Hotel Rose Garden</div>
                             <span class="sub-heading address">
                                 <i class="fa-solid fa-location-dot"></i>Ankleshwar, Nana Borsara
                                 Gujarat 394115, India
@@ -392,8 +413,8 @@
                         </div>
                     </div>
 
-                    <div class="footer-links">
-                        <div class="heading">Stay With Us</div>
+                    <div class="links footer-links">
+                        <div class="footer-heading">Stay With Us</div>
                         <ul>
                             <li><a href="#">Dining</a></li>
                             <li><a href="#">Weddings</a></li>
@@ -403,8 +424,8 @@
                         </ul>
                     </div>
 
-                    <div class="help-center">
-                        <div class="heading">Experience More</div>
+                    <div class="links help-center">
+                        <div class="footer-heading">Experience More</div>
                         <ul>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">Contact Us</a></li>
@@ -413,7 +434,7 @@
                     </div>
 
                     <div class="socials">
-                        <div class="heading">Follow Us</div>
+                        <div class="footer-heading">Follow Us</div>
 
                         <span>
                             <img src="public/assets/img/icons/facebook.svg" alt="facebook">
@@ -447,8 +468,15 @@
         </footer>
     </div>
 
+    <!-- Modal -->
+    <div class="modal">
+        <button id="back-to-top">
+            <i class="fa-solid fa-arrow-up fa-2xl"></i>
+        </button>
+    </div>
+
     <!-- Local JS -->
     <script type="module" src="src/script/main.js" defer></script>
-    <script src="src/script/client.js"></script>
+    <script type="module" src="src/script/client.js"></script>
 </body>
 </html>
