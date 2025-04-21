@@ -8,8 +8,8 @@
     <meta name="author" content="Hotel Rose Garden">
     <title>Hotel Rose Garden</title>
     <!-- Local CSS -->
-    <link rel="stylesheet" href="src/styles/main.css">
-    <link rel="stylesheet" href="src/styles/main-media-query.css">
+    <link rel="stylesheet" href="src/styles/client/main.css">
+    <link rel="stylesheet" href="src/styles/client/main-media-query.css">
     <!-- Favicon -->
     <link rel="icon" href="public/assets/img/logo.png">
     <!-- Google Icons -->
@@ -18,8 +18,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Fonts / Cizel -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Google Fonts / Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome CDN -->
     <script src="https://kit.fontawesome.com/6c2535758c.js" crossorigin="anonymous"></script>
 </head>
@@ -30,12 +28,10 @@
         <!-- Header starts -->
         <header class="header-container">
             <div class="video-container">
-                <!--
                 <video autoplay muted loop id="background-video">
                     <source src="public/assets/video/restaurant.mp4" type="video/mp4" role="presentation">
                     Your browser does not support the video tag.
                 </video>
-                -->
                 <div class="video-overlay"></div>
             </div>
 
@@ -46,13 +42,12 @@
                     </div>
 
                     <ul class="nav-links">
-                        <li><a href="">Overview</a></li>
-                        <li><a href="">Dining</a></li>
-                        <li><a href="">Menu</a></li>
-                        <li><a href="">Meetings & Events</a></li>
+                        <li><a href="index.php">Overview</a></li>
+                        <li><a href="">Dinning</a></li>
+                        <li><a href="public/pages/our-menu.php">Menu</a></li>
+                        <li><a href="">Events</a></li>
                         <li><a href="">Stay</a></li>
                         <li><a href="">Amenities</a></li>
-                        <li><a href="">Franchise</a></li>
                         <li><a href="">Contact Us</a></li>
                         <li><a href=""><i class="fa-solid fa-user"></i> Sign In</a></li>
 
@@ -83,8 +78,8 @@
                         <h4>Where comfort meets tradition in every corner. More than just a visit — it’s a feeling of belonging.</h4>
                     </div>
 
-                    <div class="book-now">
-                        <button id="book-now">Our menu</button>
+                    <div class="our-menu">
+                        <button id="our-menu" class="menu-btn">Our menu</button>
                     </div>
                 </div>  
 
@@ -103,63 +98,13 @@
                     <div class="card-right">
                         <div class="card-group">
                             <h3 class="card-header">Welcome! Your next delightful experience awaits.</h3>
-                            <button class="our-menu-btn">Our Menu</button>
+                            <button class="menu-btn our-menu-btn">Our Menu</button>
                             <p class="reservation-link">I Already Have a Reservation</p>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-
-        <!-- Featured Menu 
-        <div class="featured-menu-container">
-            <div class="featured-menu">
-                <div class="title-wrap">
-                    <h4 class="descriptor">Signature Dishes, Exquisite Flavors</h4>
-                    <h2 class="title">Featured Menu</h2>
-                </div>
-
-                <div class="featured-menu-options">
-                    <button class="btn-menu-options">Small Plates</button>
-                    <button class="btn-menu-options">Beverage</button>
-                    <button class="btn-menu-options">Vegetarian</button>
-                    <button class="btn-menu-options">Desert</button>
-                </div>
-
-                <div id="menu-container"></div>
-
-                <div class="cards hide" id="cards">
-                    <div class="card-menu" id="card-menu">
-                        <div class="card-image"></div>
-
-                        <div class="text-wrap">
-                            <div class="group">
-                                <h3 class="menu-title"></h3>
-                                <span class="price"></span>
-                            </div>
-                            
-                            <p class="menu-description"></p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pagination-container">
-                    <div class="pagination">
-                        <div class="previous">
-                            <button id="previous-btn" class="btn previous-btn"><i class="fa-solid fa-backward"></i> <span class="prev-text">Prev</span></button>
-                        </div>
-                        <div class="page-numbers" id="page-numbers">
-
-                        </div>
-                        <div class="next">
-                            <button id="next-btn" class="btn btn-next"><span class="next-text">Next</span> <i class="fa-solid fa-forward"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
 
         <!-- Hotel History -->
         <div class="hotel-history-container">
@@ -365,7 +310,7 @@
                 <div class="title-wrap">
                     <h4 class="descriptor
                     ">Hotel Rose Garden</h4>
-                    <h2 class="title">Located In The Heart of Borsara</h2>
+                    <h3 class="title">Located In The Heart of Borsara</h3>
                 </div>
 
                 <div class="contact-info">
@@ -377,9 +322,6 @@
                 <div class="google-maps">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231.97183124760082!2d73.00518893372956!3d21.5253666500026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be03dc03603a155%3A0x9cd3b6726918272d!2sHotel%20Rose%20Garden!5e0!3m2!1sen!2sca!4v1742707428255!5m2!1sen!2sca" 
-                        width="600" 
-                        height="450" 
-                        style="border:0;" 
                         allowfullscreen 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade"
@@ -416,7 +358,7 @@
                     <div class="links footer-links">
                         <div class="footer-heading">Stay With Us</div>
                         <ul>
-                            <li><a href="#">Dining</a></li>
+                            <li><a href="#">Dinning</a></li>
                             <li><a href="#">Weddings</a></li>
                             <li><a href="#">Meetings & Events</a></li>
                             <li><a href="#">Rooms & Suites</a></li>
@@ -475,8 +417,7 @@
         </button>
     </div>
 
-    <!-- Local JS -->
-    <script type="module" src="src/script/main.js" defer></script>
-    <script type="module" src="src/script/client.js"></script>
+    <!-- Local JS --> 
+    <script type="module" src="src/script/client/main.js" defer></script>
 </body>
 </html>

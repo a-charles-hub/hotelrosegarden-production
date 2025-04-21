@@ -1,4 +1,5 @@
-import { backToTop } from './modalUtils.js';
+import { backToTop } from '../modalUtils.js';
+import { clientFetch } from '../client/client.js';
 
 // Open modal
 const openModal = () => {
@@ -29,10 +30,11 @@ export const paginationMenu = () => {
 
     const getItemsPerPage = () => {
         const width = window.innerWidth;
-        if (width >= 1920) return 9;
-        if (width >= 1200) return 6;
+        if (width >= 1920) return 15;
+        if (width >= 1200) return 8;
+        if (width <= 1024) return 8;
         if (width >= 768) return 6;
-        return 6;
+        return 4;
     };
 
     const renderPagination = () => {
@@ -88,7 +90,21 @@ export const paginationMenu = () => {
     renderPagination();
 };
 
+// Redirect to menu page
+const menuBtn = () => {
+    const menuBtn = document.querySelectorAll('.menu-btn');
+
+    menuBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+            window.location.href = 'public/pages/our-menu.php';
+        });
+    })
+}
+
 
 // Call functions
 openModal();
 backToTop();
+menuBtn();
+clientFetch();
+console.log("Client script loaded successfully.");

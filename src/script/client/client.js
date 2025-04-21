@@ -1,12 +1,12 @@
 import { paginationMenu } from "./main.js";
 
-const clientFetch = async () => {
+export const clientFetch = async () => {
     try {
         // Variables
         const cardContainer = document.getElementById('menu-container');
         const menu = document.getElementById('card-menu');
 
-        const response = await fetch('public/app/includes/menu.inc.php', {
+        const response = await fetch('../app/includes/menu.inc.php', {
             method: "GET"
         });
 
@@ -19,6 +19,10 @@ const clientFetch = async () => {
 
                 displayCardsClient(menuItem, cardContainer, menu);
             });
+
+            
+            // Call pagination function to apply pagination
+            paginationMenu();
         }
         else {
             cardContainer.innerHTML = "Our menu is being prepared. Please check back soon!";
@@ -58,12 +62,6 @@ const displayCardsClient = (data, cardContainer, menu) => {
     cardImage.appendChild(img); 
     // Append the card
     cardContainer.appendChild(menuClone);
-
-    // Call pagination function to apply pagination
-    paginationMenu();
-
 }
 
-// Call functions
-clientFetch();
-
+console.log("Client script loaded successfully.");

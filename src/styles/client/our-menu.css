@@ -1,0 +1,283 @@
+/* Global Styles*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+/* Root Variables */
+:root {
+    --font: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-body-poppins: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #f2f2f2;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    background: #f8f8f8;
+}
+
+.carousel {
+    position: relative;
+    width: 100%; /* Adjust based on your preference */
+    overflow: hidden; /* Hide the overflowed images */
+    margin: 0;
+    padding: 0;
+}
+
+.buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.slide-btn {
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.slide-btn i {
+    color: rgba(255, 255, 255, 0.5);
+
+}
+
+.slides {
+    position: relative;
+    display: flex;
+    object-fit: cover;
+    flex-direction: row;
+    transition: transform 1.5s ease; /* Smooth transition for sliding */
+}
+
+.slide {
+    min-width: 100%;
+    height: 40vh;
+    filter: brightness(0.6);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    will-change: opacity, transform;
+}
+
+/* Active slide will fade in */
+.active {
+    opacity: 1;
+}
+
+.title-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55vh; /* Full height of the carousel */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    z-index: 2;
+    color: white;
+    pointer-events: none; /* Optional: allow clicks to pass through */
+}
+
+.title-header h3 {
+    font-family: var(--font-body);
+    font-size: 48px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.introduction {
+    padding: 80px 0;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.card-introduction h3 {
+    font-family: var(--font-body);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.card-introduction .description {
+    width: 50vw;
+    margin: 0 auto;
+}
+
+/* Featured Menu */
+.featured-menu-container {
+    padding: 50px 0;
+}
+
+.featured-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Menu */
+.cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 428px);
+    justify-content: center;
+    min-height: calc(3 * 428px + 2 * 15px); /* 3 cards + 2 gaps */
+    gap: 15px;
+    height: auto;
+    transition: min-height 1s ease;
+}
+
+.card-menu {
+    width: 428px;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.text-wrap {
+    line-height: 1.2;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.menu-title {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.menu-description {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 14px;
+    text-align: start;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.price {
+    font-family: var(--font-body);
+    margin-top: 3px;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: start;
+}
+
+.text-wrap .group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.card-menu img {
+    width: 418px;
+    max-width: 100%;
+    height: 240px;
+    max-height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* JS Variables */
+.hidden {
+    display: none;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.pagination .page-numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    font-family: var(--font-body);
+}
+
+.pagination .btn {
+    cursor: pointer;
+    border: none !important;
+    font-family: var(--font-body);
+    font-size: 18px;
+}
+
+.pagination .page-numbers div {
+    padding: 8px 14px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.1s ease; 
+    color: #000;
+    cursor: pointer;
+}
+
+.pagination .page-numbers .number a {
+    text-decoration: none;
+    color: #000; 
+    display: block; 
+}
+
+.pagination .page-numbers div:hover {
+    background: #000;
+    color: #fff;
+}
+
+.pagination .page-numbers .number a:hover {
+    color: #fff; 
+}
+
+/* Current Page */
+.pagination .page-numbers div.active {
+    color: #fff;  
+    background-color: #000;
+}
+
+.pagination .previous button,
+.pagination .next button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-container {
+    padding-top: 50px !important; 
+}

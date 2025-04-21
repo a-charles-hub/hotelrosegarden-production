@@ -1,14 +1,14 @@
 /* Main - Media Query */
 
 /* Mobile & Tablets*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .container {
         position: relative;
     }
 
     /* Navbar & Header */
     .header-container {
-        height: 50vh;
+        height: 60vh;
         position: relative;
     }
 
@@ -16,9 +16,8 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 50vh;
+        height: 60vh;
         z-index: 1;
-    
     }
 
     #background-video {
@@ -42,16 +41,19 @@
         z-index: 1;
     }
 
+    .title::before,
+    .title::after {
+        content: none;
+    }
+
     .nav {
-        position: fixed;
-        padding: 0 1em;
-        background: rgba(0, 0, 0, 0.7); /* semi-transparent white */
-        backdrop-filter: blur(10px);          /* blur effect */
-        -webkit-backdrop-filter: blur(10px);  /* for Safari support */
+        position: relative;
+        width: 100%;
+        background: #0E0E0E; 
         opacity: 1;
         height: 70px;
+        padding: 0 20px;
         z-index: 10;
-        top: 0;
     }
 
     .nav .logo {
@@ -85,6 +87,7 @@
         background: #000;
         margin: 0 auto;
         gap: 25px;
+        font-size: 18px;
 
         /* Hide initially */
         transform: translateY(-100%);
@@ -122,12 +125,6 @@
         margin-top: -10px;
     }
 
-    /* Featured Menu */
-    .featured-menu-container {
-        margin-top: 30px;
-        background: #F8F8F8;
-    }
-
     /* Card */ 
     .card-container .card,
     .card-container .card-right {
@@ -135,7 +132,7 @@
     }
 
     .card-container {
-        margin-top: 150px;
+        margin-top: 100px;
     }
 
     .hero-section {
@@ -164,7 +161,7 @@
         font-weight: 400;
     }
 
-    .book-now button {
+    .our-menu button {
         border: 1px solid #fff;
         background: none;
         outline: none;
@@ -182,63 +179,6 @@
         display: none;
     }
 
-    /* Featured Menu */
-    .title::before,
-    .title::after {
-        content: none;
-    }
-
-    /* Card Menu */
-    .cards {
-        width: 100%;
-        height: auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 200px); /* Adjust the width of each card */
-        justify-content: center;
-        gap: 5px;
-    }
-
-    .card-menu {
-        width: 100%;
-        height: 100%;
-        margin-top: 0 !important;
-    }
-
-    .card-menu img {
-        height: 150px;
-        max-height: 100%;
-        object-fit: cover;
-        object-position: center;
-        margin: 0 !important;
-    }
-
-    .card-menu .text-wrap {
-        display: flex;
-        margin-top: 5px;
-        align-items: start;
-        padding: 5px !important;
-        width: 100%;
-    }
-
-    .card-menu .menu-title {
-        font-size: 16px;
-        font-weight: 600;
-        margin-top: 0;
-        word-break: break-word;      
-    }
-
-    .card-menu .menu-description {
-        text-align: start;
-    }
-
-    .card-menu .price {
-        font-size: 14px;
-    }
-
-    .menu-description {
-
-        font-size: 12px;
-    }
     /* Hotel History */
     .history {
         font-size: 14px;
@@ -460,6 +400,10 @@
         text-align: center !important;
     }
 
+    .footer .title-wrap .title {
+        margin: 10px 20px;
+    }
+
     .wrap {
         display: flex;
         flex-direction: column !important;
@@ -507,31 +451,35 @@
     .developer .blue a {
         color: #bffcf9 !important;
     }
-
-    /* Modal */
-    .modal {
-        position: fixed;
-        bottom: 0;
-        padding: 1em;
-        z-index: 10;
-        right: 0;
-        z-index: 9999;
-    }
-
-    .modal button {
-        border: none;
-        background: rgba(0, 0, 0, 0.7); /* semi-transparent white */
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
-
-    .modal button i {
-        color: #f8f8f8;
-    }
-    
 }   
+
+@media (max-width: 768px) {
+    .card-container {
+        margin-top: 150px;
+    }
+}
+
+
+@media (max-width: 375px) {
+    /* Navbar & Header */
+    .header-container,
+    .video-container {
+        height: 80vh;
+    }
+
+    .card-container {
+        position: relative;
+        margin: 0 20px !important;
+        margin-top: 150px !important;
+    }
+
+    .hotel-history-container {
+        margin-top: 0;
+        padding: 20px 0;
+    }
+
+    .hotel-history-container .title-wrap .title {
+        margin: 0 10px;
+        margin-bottom: 10px;
+    }
+}

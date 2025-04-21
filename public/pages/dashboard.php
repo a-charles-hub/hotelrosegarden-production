@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Hotel Rose Garden</title>
     <!-- Local CSS -->
-    <link rel="stylesheet" href="../../src/styles/menu-management.css">
-    <link rel="stylesheet" href="../../src/styles/modals.css">
-    <link rel="stylesheet" href="../../src/styles/dashboard-media-query.css">
+    <link rel="stylesheet" href="../../src/styles/admin/menu-management.css">
+    <link rel="stylesheet" href="../../src/styles/admin/modals.css">
+    <link rel="stylesheet" href="../../src/styles/admin/dashboard-media-query.css">
     <!-- Favicon -->
     <link rel="icon" href="../assets/img/logo.png">
     <!-- Google Fonts / Montserrat-->
@@ -100,6 +100,6 @@
     </div>
 
     <!-- Local JS -->
-    <script type="module"  src="../../src/script/dashboard.js" defer></script>
+    <script type="module"  src="../../src/script/admin/dashboard.js" defer></script>
 </body>
 </html>
