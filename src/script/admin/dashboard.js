@@ -1,4 +1,4 @@
-import { reloadCache, fileInput, modalMenuConfirmation } from "./modalUtils.js";
+import { reloadCache, fileInput, modalMenuConfirmation } from "../modalUtils.js";
 import { fetchMenu } from "./menu.js";  
 import { modalAddMenu, closeModals } from "./menu-management.js";  
 import { search } from "./search.js";

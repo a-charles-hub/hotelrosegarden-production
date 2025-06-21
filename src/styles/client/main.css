@@ -36,64 +36,62 @@ ul {
 
 /* Container */
 .container {
-    background: #F8F8F8;
     color: #000;
 }
 
 /* Header */
 .header-container {
-    position: relative;
-    background: #f2f2f2;
+    border: 1px solid red;
     width: 100%;
     height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
-.video-container {
+.background-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height: 80vh;
 }
 
-video {
+.background-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    filter: brightness(0.5);
 }
 
 .header {
-    margin: 0;
+    position: relative;
 }
 
+/* Navigation */
 .nav {
-    position: relative;
-    z-index: 1;
-    width: 100%;
+    font-family: var(--font-body);
     height: 100px;
-    background: #0E0E0E;
+    padding: 0 50px;
+    font-weight: 500;
+}
+
+.nav-wrap {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 1;
-    margin: 0;
-    font-family: var(--font-body);
-    padding: 0 30px;
 }
-
 .nav-links {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
     width: 100%;
     height: 100px;
-    gap: 50px;
+    gap: 40px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.nav-links.right {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .nav-links a:hover {
@@ -124,107 +122,9 @@ video {
     font-family: var(--font-body);
 }
 
-/* Card Container */
-.card-container {
-    position: relative;
-    margin: 0 50px;
-    margin-top: auto;
-    margin-bottom: 60px;
-    z-index: 1;
-}
 
-.card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
 
-/* Card Left */
-
-.card-left {
-    background-color: rgba(248, 248, 248, 0.1); /* Semi-transparent light grey */
-    backdrop-filter: blur(5px); /* Applies blur effect */
-    -webkit-backdrop-filter: blur(5px); /* For Safari */
-    width: 362px;
-    height: 150px;
-    color: #ffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-}
-
-.card-title {
-    font-family: var(--font);
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 34px;
-}
-
-.card-info {
-    font-family: var(--font-body);
-    font-weight: 300;
-    font-size: 12px;
-}
-
-.address > i,
-.contact-number > i {
-    margin-right: 10px;
-}
-
-/* Card Right */
-
-.card-right {
-    width: 430px;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #F8F8F8;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card-right > * {
-    margin-bottom: 20px;
-}
-
-.card-group {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.card-header {
-    font-family: var(--font-body);
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 14px;
-}
-
-.our-menu-btn {
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 12px;
-    width: 100px;
-    height: 30px;
-    background: #000;
-    color: #f2f2f2;
-    border: none;
-    cursor: pointer;
-}
-
-.reservation-link {
-    font-family: var(--font-body);
-    font-weight: 300;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-decoration: underline;
-    cursor: pointer;
-    letter-spacing: 2px;
-}
-
+/* History */
 .title-wrap {
     line-height: 1;
     text-align: center;

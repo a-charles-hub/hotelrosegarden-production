@@ -1,4 +1,4 @@
-import { openModal, close } from "./modalUtils.js";
+import { openModal, close } from "../modalUtils.js";
 import { deleteMenu } from "./menu.js";
 
 export const categoryList = (element, section, defaultHover) => {

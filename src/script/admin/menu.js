@@ -1,10 +1,10 @@
 // Imports
-import { reloadCache } from "./modalUtils.js";
+import { reloadCache } from "../modalUtils.js";
 import { menuModal } from './menu-management.js';
 import { search } from "./search.js";
 
 // Global variables
-let cachedData = []; // Data is from fetchMenu*) function. This cointains cached data. 
+let cachedData = []; // Data is from fetchMenu()) function. This cointains cached data. 
 
 export const fetchMenu = async () => {
     try {

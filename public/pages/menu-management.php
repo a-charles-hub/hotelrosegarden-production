@@ -147,7 +147,7 @@
                                 </div>
                             </div>
 
-                            <div id="menu-container"></div>
+                            <div id="menu-container" class="card"></div>
 
                             <!--- Menu list starts -->
                             <div class="menu" style="display:none;" data-menu-id="" id="menu-template">

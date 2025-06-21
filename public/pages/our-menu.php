@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../src/styles/client/main.css">
     <link rel="stylesheet" href="../../src/styles/client/main-media-query.css">
     <link rel="stylesheet" href="../../src//styles/client/our-menu.css">
+    <link rel="stylesheet" href="../../src/styles/client/layout.css">
     <link rel="stylesheet" href="../../src/styles/client/our-menu-media-query.css">
     <!-- Favicon -->
     <link rel="icon" href="../assets/img/logo.png">
@@ -21,97 +22,76 @@
     <script src="https://kit.fontawesome.com/6c2535758c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="header">
-        <nav class="nav">
-            <div class="logo">
-                <img src="../../public/assets/img/logo.png" alt="Hotel Rose Garden">
-            </div>
-
-            <ul class="nav-links">
-                <li><a href="../../index.php">Overview</a></li>
-                <li><a href="">Dinning</a></li>
-                <li><a href="">Menu</a></li>
-                <li><a href="">Events</a></li>
-                <li><a href="">Stay</a></li>
-                <li><a href="">Amenities</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href=""><i class="fa-solid fa-user"></i> Sign In</a></li>
-
-                <div class="nav-socials">
-                    <li><img src="../../public/assets/img/icons/facebook.svg" alt="facebook"></li>
-                    <li><img src="../../public/assets/img/icons/instagram.svg" alt="instagram"></li>
-                    <li><img src="../../public/assets/img/icons/whatsapp.svg" alt="whatsapp"></li>
-                    <li><img src="../../public/assets/img/icons/twitter.svg" alt="twitter"></li>
-                </div>
-            </ul>
-
-            <div class="hamburger-menu" id="hamburger-menu">
-               <i class="fa-solid fa-bars fa-xl" style="color: #fff;"></i>
-            </div>
-
-            <div class="close" id="close">
-                <i class="fa-solid fa-xmark fa-xl" style="color: #fff;"></i>
-            </div>
-        </nav>
-
-        <div class="carousel">
-            <div class="slides">
-                <img src="https://wallpapers.com/images/hd/traditional-indian-food-in-flat-lay-photograph-l808i2de2j2bacdi.jpg" alt="" class="slide active">
-                <img src="https://images.ctfassets.net/3s5io6mnxfqz/6ZImCEzx6UuvuKaAiZEDDN/50479ee4a0902deb4eb1bab720ce248a/image1.jpg" alt="" class="slide">
-                <img src="https://wallpaperaccess.com/full/2975587.jpg" alt="" class="slide">
-            </div>
-
-            <div class="buttons">
-                <button class="slide-btn btn-prev"><i class="fa-solid fa-angle-left fa-2xl"></i></button>
-                <button class="slide-btn btn-next"><i class="fa-solid fa-angle-right fa-2xl"></i></button>
-            </div>
-        </div>
-
-        <div class="title-header">
-            <h3>Our Menu</h3>
-        </div>
-    </div>
-
     <div class="container">
-        <div class="introduction">
-            <div class="card-introduction">
-                <h3>A Journey Through Indian Cuisine</h3>
-                
-                <p class="description">
-                    Discover a delicious variety of dishes made with fresh ingredients and crafted with care. From savory starters to mouthwatering mains and indulgent desserts, there’s something for every craving. Whether you're here for a light bite or a full-course feast, our menu is designed to satisfy.
-                </p>
+        <header class="header-container">
+            <div class="background-container">
+                <img src="https://images.unsplash.com/photo-1613292443284-8d10ef9383fe?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
             </div>
-        </div>
 
-        <div class="featured-menu-container">
-            <div class="featured-menu">
-                <div id="menu-container"></div>
-
-                <div class="cards hide" id="cards">
-                    <div class="card-menu" id="card-menu">
-                        <div class="card-image"></div>
-
-                        <div class="text-wrap">
-                            <div class="group">
-                                <h3 class="menu-title"></h3>
-                                <span class="price"></span>
-                            </div>
-                            
-                            <p class="menu-description"></p>
-
+            <div class="header">
+                <nav class="nav">
+                    <div class="nav-wrap">
+                        <ul class="nav-links">
+                            <li><a href="../../index.php">Overview</a></li>
+                            <li><a href="../pages/our-menu.php">Menu</a></li>
+                            <li><a href="../pages/accomodation.php">Accomodation</a></li>
+                            <li><a href="../pages/amenities.php">Amenities</a></li>
+                        </ul>    
+                        
+                        <!-- Logo -->
+                        <div class="logo">
+                            <img src="../assets/img/logo.png" alt="Hotel Rose Garden">
                         </div>
+
+                        <ul class="nav-links right">
+                            <li><a href=""><i class="fa-solid fa-calendar-days"></i> Book Now</a></li>
+                            <li><a href=""><i class="fa-solid fa-right-to-bracket"></i> Sign In</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="header-content">
+                    <div class="header-wrap">
+                        <h1 class="content-title">Our Menu</h1>
+                        <h2 class="subtitle">A Taste of India, for Everyone</h2>
+
+                        <p class="description">Enjoy a rich journey through authentic Indian cuisine, where every dish is thoughtfully prepared with halal-certified ingredients and an emphasis on flavor, tradition, and inclusivity. Whether you're a local seeking comfort food or a traveler discovering new tastes, our menu offers a vibrant variety of vegan-friendly and vegetarian options—each crafted to honor India’s culinary heritage while welcoming every palate and preference.</p>
                     </div>
                 </div>
+        </header>
 
-                <div class="pagination-container">
-                    <div class="pagination">
-                        <div class="previous">
-                            <button type="button" id="previous-btn" class="btn previous-btn"><i class="fa-solid fa-backward"></i> <span class="prev-text">Prev</span></button>
-                        </div>
-                        
-                        <div class="page-numbers" id="page-numbers"></div>
-                        <div class="next">
-                            <button type="button" id="next-btn" class="btn btn-next"><span class="next-text">Next</span> <i class="fa-solid fa-forward"></i></button>
+        <div class="content-container">
+            <div class="navigation">
+                <div class="navigation-wrap">
+                    <ul class="navigation-links">
+                        <li><a href="#all">All</a></li>
+                        <li><a href="#breakfast">Breakfast</a></li>
+                        <li><a href="#lunch">Lunch</a></li>
+                        <li><a href="#dinner">Dinner</a></li>
+                        <li><a href="#desserts">Vegetarian</a></li>
+                        <li><a href="#specials">Specials</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="menu-container"></div>
+
+                <!-- TEMPLATE CARD (hidden) -->
+                <div class="card-menu hide">
+                    <div class="card-wrap">
+                        <div class="card-img"></div>
+                        <div class="card-content">
+                            <div class="card-title">
+                                <h3 class="menu-title"></h3>
+                                <p class="price"></p>
+                            </div>
+                            <div class="card-category">
+                                <h4 class="menu-category"></h4>
+                            </div>
+                            <div class="card-description">
+                                <p class="menu-description"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -194,6 +174,7 @@
                 </div>
             </div>
         </footer>
+
     </div>
 
     <!-- Modal -->
@@ -204,6 +185,6 @@
     </div>
 
     <script type="module" src="../../src/script/client/main.js" defer></script>
-    <script src="../../src/script/client/our-menu.js" defer></script>
+    <script src="../../src/script/client/clients.js" defer></script>
 </body>
 </html>

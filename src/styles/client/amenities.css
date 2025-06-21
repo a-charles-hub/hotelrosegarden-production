@@ -25,6 +25,15 @@ ul {
     background: #F2F2F2;
 }
 
+.content-amenities {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    gap: 50px;
+    padding: 50px 0;
+    justify-content: center; /* center the whole grid horizontally */
+}
+
+/* Footer */
 .footer-container {
     padding-top: 50px !important; 
 }

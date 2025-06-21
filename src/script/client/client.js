@@ -1,10 +1,8 @@
-import { paginationMenu } from "./main.js";
-
 export const clientFetch = async () => {
     try {
         // Variables
-        const cardContainer = document.getElementById('menu-container');
-        const menu = document.getElementById('card-menu');
+        const cardContainer = document.querySelector('.menu-container');
+        const menu = document.querySelector('.card-menu');
 
         const response = await fetch('../app/includes/menu.inc.php', {
             method: "GET"
@@ -19,10 +17,6 @@ export const clientFetch = async () => {
 
                 displayCardsClient(menuItem, cardContainer, menu);
             });
-
-            
-            // Call pagination function to apply pagination
-            paginationMenu();
         }
         else {
             cardContainer.innerHTML = "Our menu is being prepared. Please check back soon!";
@@ -34,18 +28,19 @@ export const clientFetch = async () => {
 }
 
 const displayCardsClient = (data, cardContainer, menu) => {
-    cardContainer.classList.add('cards');
 
     // Clone hidden templates
     const menuClone = menu.cloneNode(true);
+    menuClone.classList.remove('hide');
     menuClone.classList.add('show');
     
     // Find elements inside the clone
     const img = document.createElement('img');
-    const cardImage = menuClone.querySelector('.card-image');
+    const cardImage = menuClone.querySelector('.card-img');
     const menuTitle = menuClone.querySelector('.menu-title');
     const description = menuClone.querySelector('.menu-description');
     const price = menuClone.querySelector('.price');
+    const category = menuClone.querySelector('.menu-category');
 
     // Fill contents
     img.src = data.url;
@@ -56,6 +51,7 @@ const displayCardsClient = (data, cardContainer, menu) => {
     menuTitle.textContent = data.title;
     description.textContent = data.description;
     price.textContent = '₹' + data.price;
+    category.textContent = data.category;
 
     // Clear and add image
     cardImage.innerHTML = '';
@@ -64,4 +60,3 @@ const displayCardsClient = (data, cardContainer, menu) => {
     cardContainer.appendChild(menuClone);
 }
 
-console.log("Client script loaded successfully.");

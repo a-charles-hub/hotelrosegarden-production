@@ -9,6 +9,7 @@
     <title>Hotel Rose Garden</title>
     <!-- Local CSS -->
     <link rel="stylesheet" href="src/styles/client/main.css">
+    <link rel="stylesheet" href="src/styles/client/layout.css">
     <link rel="stylesheet" href="src/styles/client/main-media-query.css">
     <!-- Favicon -->
     <link rel="icon" href="public/assets/img/logo.png">
@@ -27,83 +28,38 @@
     <div class="container">
         <!-- Header starts -->
         <header class="header-container">
-            <div class="video-container">
-                <video autoplay muted loop id="background-video">
-                    <source src="public/assets/video/restaurant.mp4" type="video/mp4" role="presentation">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-overlay"></div>
+            <div class="background-container">
+                <img src="https://images.unsplash.com/photo-1591920476948-da986641e66a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
             </div>
 
             <div class="header">
                 <nav class="nav">
-                    <div class="logo">
-                        <img src="public/assets/img/logo.png" alt="Hotel Rose Garden">
-                    </div>
-
-                    <ul class="nav-links">
-                        <li><a href="index.php">Overview</a></li>
-                        <li><a href="">Dinning</a></li>
-                        <li><a href="public/pages/our-menu.php">Menu</a></li>
-                        <li><a href="">Events</a></li>
-                        <li><a href="">Stay</a></li>
-                        <li><a href="">Amenities</a></li>
-                        <li><a href="">Contact Us</a></li>
-                        <li><a href=""><i class="fa-solid fa-user"></i> Sign In</a></li>
-
-                        <div class="nav-socials">
-                            <li><img src="public/assets/img/icons/facebook.svg" alt="facebook"></li>
-                            <li><img src="public/assets/img/icons/instagram.svg" alt="instagram"></li>
-                            <li><img src="public/assets/img/icons/whatsapp.svg" alt="whatsapp"></li>
-                            <li><img src="public/assets/img/icons/twitter.svg" alt="twitter"></li>
+                    <div class="nav-wrap">
+                        <ul class="nav-links">
+                            <li><a href="index.php">Overview</a></li>
+                            <li><a href="public/pages/our-menu.php">Menu</a></li>
+                            <li><a href="">Accomodation</a></li>
+                            <li><a href="public/pages/amenities.php">Amenities</a></li>
+                        </ul>    
+                        
+                        <!-- Logo -->
+                        <div class="logo">
+                            <img src="public/assets/img/logo.png" alt="Hotel Rose Garden">
                         </div>
-                    </ul>
 
-                    <div class="hamburger-menu" id="hamburger-menu">
-                       <i class="fa-solid fa-bars fa-xl" style="color: #fff;"></i>
-                    </div>
-
-                    <div class="close" id="close">
-                        <i class="fa-solid fa-xmark fa-xl" style="color: #fff;"></i>
+                        <ul class="nav-links right">
+                            <li><a href=""><i class="fa-solid fa-calendar-days"></i> Book Now</a></li>
+                            <li><a href=""><i class="fa-solid fa-right-to-bracket"></i> Sign In</a></li>
+                        </ul>
                     </div>
                 </nav>
-            </div>
 
-            <div class="card-container">
-                <div class="hero-section">
-                    <div class="hero-heading">
-                        <h3>A Place That Feels Like Coming  Home</h3>
-                    </div>
-                    <div class="hero-subheading">
-                        <h4>Where comfort meets tradition in every corner. More than just a visit — it’s a feeling of belonging.</h4>
-                    </div>
-
-                    <div class="our-menu">
-                        <button id="our-menu" class="menu-btn">Our menu</button>
-                    </div>
-                </div>  
-
-                <div class="card">
-                    <div class="card-left">
-                        <div class="card-group">
-                            <h1 class="card-title">Hotel Rose Garden</h1>
-                            <p class="card-info address">
-                                <i class="fa-solid fa-location-dot"></i>Ankleshwar, Nana Borsara, Gujarat 394115, India</p>
-                            <p class="card-info contact-number">
-                                <i class="fa-solid fa-phone"></i>+919876543210
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card-right">
-                        <div class="card-group">
-                            <h3 class="card-header">Welcome! Your next delightful experience awaits.</h3>
-                            <button class="menu-btn our-menu-btn">Our Menu</button>
-                            <p class="reservation-link">I Already Have a Reservation</p>
-                        </div>
+                <div class="header-content">
+                    <div class="header-wrap">
+                        <h2 class="subtitle">Hotel Rose Garden</h2>
+                        <h1 class="title">Rest, Relax, Reconnect</h1>
                     </div>
                 </div>
-            </div>
         </header>
 
         <!-- Hotel History -->
@@ -143,7 +99,7 @@
                     <div class="text-wrap">
                         <div class="heading-wrap">
                             <h4 class="sub-heading">Seamless Comfort</h4>
-                            <h1 class="heading">Indoor Dining</h1>
+                            <h2 class="heading">Indoor Dining</h2>
                         </div>
     
                         <p class="description">Experience the warmth of elegant indoor dining, where refined ambiance meets exceptional flavors. Enjoy a cozy, sophisticated setting with impeccable service, perfect for intimate meals, family gatherings, or business meetings.</p>
@@ -417,7 +373,8 @@
         </button>
     </div>
 
-    <!-- Local JS --> 
+    <!-- Local JS 
     <script type="module" src="src/script/client/main.js" defer></script>
+    --> 
 </body>
 </html>
