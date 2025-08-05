@@ -6,7 +6,7 @@
     <meta name="description" content="Experience luxury and comfort at Hotel Rose Garden in Borsara, Gujarat. Located in a peaceful setting, we offer elegant rooms, fine dining, and premium hospitality. Book now for a memorable stay.">
     <meta name="keywords" content="Hotel Rose Garden, luxury hotel Borsara, best hotels in Gujarat, accommodation in Ankleshwar, fine dining, premium hospitality">
     <meta name="author" content="Hotel Rose Garden">
-    <title>Hotel Rose Garden</title>
+    <title>Home | Hotel Rose Garden</title>
     <!-- Local CSS -->
     <link rel="stylesheet" href="src/styles/client/main.css">
     <link rel="stylesheet" href="src/styles/client/layout.css">
@@ -64,19 +64,19 @@
 
         <!-- Hotel History -->
         <div class="hotel-history-container">
-            <div class="title-wrap">
+            <div class="title-wrap animate">
                 <h4 class="title">A LUXURIOUS HOTEL RESTAURANT</h4>
             </div>
 
             <div class="history-container">
-                <p class="history paragraph-1">Founded in 2010, Hotel Rose Garden was born from a vision to create a welcoming space where guests could experience warmth, comfort, and the rich flavors of Indian cuisine. Located along a scenic highway, we stand as a beacon for travelers, locals, and food lovers alike, offering a respite where the road meets unforgettable dining.</p>
+                <p class="history paragraph-1 animate">Founded in 2010, Hotel Rose Garden was born from a vision to create a welcoming space where guests could experience warmth, comfort, and the rich flavors of Indian cuisine. Located along a scenic highway, we stand as a beacon for travelers, locals, and food lovers alike, offering a respite where the road meets unforgettable dining.</p>
 
-                <p class="history paragraph-2">From humble beginnings, our journey has been one of passion and dedication—committed to serving dishes made with the finest ingredients, steeped in tradition, and crafted with love. Every corner of our hotel echoes this story, with our banquet hall, serene prayer spaces, and lush outdoor settings designed to offer moments of peace and joy for all who visit.</p>
+                <p class="history paragraph-2 animate">From humble beginnings, our journey has been one of passion and dedication—committed to serving dishes made with the finest ingredients, steeped in tradition, and crafted with love. Every corner of our hotel echoes this story, with our banquet hall, serene prayer spaces, and lush outdoor settings designed to offer moments of peace and joy for all who visit.</p>
 
-                <p class="history paragraph-3">At Hotel Rose Garden, we believe in the power of food to bring people together, whether for a quiet meal or a grand celebration. As we continue to grow, we remain deeply rooted in the values of hospitality and the timeless beauty of Indian culture.</p>
+                <p class="history paragraph-3 animate">At Hotel Rose Garden, we believe in the power of food to bring people together, whether for a quiet meal or a grand celebration. As we continue to grow, we remain deeply rooted in the values of hospitality and the timeless beauty of Indian culture.</p>
             </div>
 
-            <div class="hotel-info">
+            <div class="hotel-info animate">
                 <p class="hotel-location">Ankleshwar, Nana Borsara, Gujarat 394115, India</p>
 
                 <p class="hotel-contact">+91 98765 43210</p>
@@ -85,7 +85,7 @@
 
         <!-- Amenities -->
         <div class="amenities-container">
-            <div class="amenities-header">
+            <div class="amenities-header animate">
                 <div class="title-wrap">
                     <h4 class="descriptor">Rest, Relax, and Rejuvenate</h4>
                     <h2 class="title">Amenities</h2>
@@ -93,7 +93,7 @@
             </div>
 
             <div class="amenities">
-                <div class="amenity indoor-dining">
+                <div class="amenity indoor-dining animate">
                     <img src="https://media.cnn.com/api/v1/images/stellar/prod/201006124420-indoor-dining-covid-19.jpg?q=x_0,y_374,h_2268,w_4032,c_crop/h_833,w_1480" alt="" loading="lazy">
 
                     <div class="text-wrap">
@@ -106,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="amenity outdoor-dining">
+                <div class="amenity outdoor-dining animate">
                     <img src="https://media.architecturaldigest.com/photos/618a7d98d4dc025cc87e313d/4:3/w_5336,h_4002,c_limit/Exterior%203.jpg" alt="" loading="lazy">
 
                     <div class="text-wrap">
@@ -123,7 +123,7 @@
 
         <!-- Rose Pavilion -->
          <div class="rose-pavilion-container show-element">
-            <div class="rose-pavilion">
+            <div class="rose-pavilion animate">
                 <div class="gallery">
                     <div class="main-image">
                         <img src="https://img.cdn-pictorem.com/uploads/collection/R/RT5LRO2KGR/900_Socratubik_IMG_1857071712.jpg" alt="" loading="lazy">
@@ -149,7 +149,7 @@
 
                         <p class="description">Nestled within our serene grounds, The Rose Pavilion offers a unique space where elegance meets convenience. Whether you're celebrating a milestone, hosting an intimate gathering, or enjoying outdoor leisure, this versatile venue is designed for every occasion. With a stunning cricket field, peaceful prayer hall, vibrant playground, and more, it provides a perfect balance of relaxation and excitement for all ages and interests.</p>
 
-                        <div class="explore-now">Explore Now</div>
+                        <div class="explore-now explore-amenities">Explore Now</div>
                     </div>
                 </div>
             </div>
@@ -157,7 +157,7 @@
 
         <!-- Exclusive Venues -->
         <div class="exclusive-venues-container">
-            <div class="exclusive-venues">
+            <div class="exclusive-venues animate">
                 <div class="left-aligned-content">
                     <div class="text-wrap">
                         <div class="heading-wrap">
@@ -167,7 +167,7 @@
 
                         <p class="description">Our Party Hall is the perfect setting for your most cherished moments. With a capacity to host up to 1200 guests, it offers a spacious, elegant environment for weddings, corporate events, and large family gatherings. Experience exceptional service, luxurious ambiance, and an atmosphere that brings your celebrations to life.</p>
 
-                        <div class="explore-now">Explore Now</div>
+                        <div class="explore-now explore-venues">Explore Now</div>
                     </div>
                 </div>
                 
@@ -181,7 +181,7 @@
 
         <!-- Accomodations -->
         <div class="accomodations-container">
-            <div class="accomodations">
+            <div class="accomodations animate">
                 <div class="gallery">
                     <div class="main-image">
                         <img src="https://media.edinburgh.org/wp-content/uploads/2023/04/23154056/The-Balmoral-Executive-View-Room-e1682260891619.jpg" alt="" loading="lazy">
@@ -197,7 +197,7 @@
 
                         <p class="description">Our 10 elegantly designed guest rooms offer a blend of comfort and convenience, perfect for travelers seeking a peaceful stay. Whether you're here for a short visit or an extended getaway, each room provides a warm ambiance, modern amenities, and a serene escape from the bustle of the road. Experience hospitality at its finest in a setting that feels like home.</p>
 
-                        <div class="explore-now">Explore Now</div>
+                        <div class="explore-now explore-accomodations">Explore Now</div>
                     </div>
                 </div>
             </div>
@@ -205,14 +205,14 @@
 
         <!-- Instagram Gallery -->
         <div class="instagram-gallery-container">
-            <div class="instagram-gallery">
+            <div class="instagram-gallery animate">
                 <div class="title-wrap">
                     <h4 class="descriptor">What's Happening</h4>
                     <h2 class="title">Instagram Gallery</h2>
                 </div>
 
                 <div class="cards-container">
-                    <div class="cards">
+                    <div class="cards animate">
                         <div class="card">
                             <img src="https://i.pinimg.com/originals/fe/33/28/fe3328080d12ae8f28a3c7e7fd4f946f.jpg" alt="" loading="lazy">
                         </div>
@@ -261,7 +261,7 @@
         </div>
 
         <!-- Footer -->
-        <div class="footer-top">
+        <div class="footer-top animate">
             <div class="footer">
                 <div class="title-wrap">
                     <h4 class="descriptor
@@ -288,7 +288,7 @@
             </div>
         </div>
 
-        <footer class="footer-container">
+        <footer class="footer-container animate">
             <div class="footer-wrap">
                 <div class="wrap">
                     <div class="footer-info">
@@ -318,7 +318,7 @@
                             <li><a href="#">Weddings</a></li>
                             <li><a href="#">Meetings & Events</a></li>
                             <li><a href="#">Rooms & Suites</a></li>
-                            <li><a href="#">Amenities</a></li>
+                            <li><a href="public/pages/amenities.php">Amenities</a></li>
                         </ul>
                     </div>
 
@@ -368,13 +368,13 @@
 
     <!-- Modal -->
     <div class="modal">
-        <button id="back-to-top">
+        <button class="btn-top" id="back-to-top" aria-label="Back to top">
             <i class="fa-solid fa-arrow-up fa-2xl"></i>
         </button>
     </div>
 
-    <!-- Local JS 
+    <!-- Local JS --> 
     <script type="module" src="src/script/client/main.js" defer></script>
-    --> 
+    
 </body>
 </html>

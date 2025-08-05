@@ -207,8 +207,12 @@ export const deleteMenu = async (currentMenuId) => {
     });
 }
 
+// Call the fetchMenu function to load the menu data
+
 (async () => {
     await fetchMenu();
     const input = document.getElementById('search');
+
+    // Call the search function with the input and cached data
     search(input, cachedData);
 })();

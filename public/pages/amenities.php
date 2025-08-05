@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Menu</title>
+    <title>Amenities | Hotel Rose Garden</title>
     <!-- Local CSS -->
     <link rel="stylesheet" href="../../src/styles/client/main.css">
     <link rel="stylesheet" href="../../src/styles/client/layout.css">
@@ -59,22 +59,22 @@
         </header>
 
         <div class="content-container">
-            <div class="navigation">
+            <div class="navigation animate">
                 <div class="navigation-wrap">
                     <ul class="navigation-links">
-                        <li><a href="#all">All</a></li>
-                        <li><a href="#recreation">Recreation</a></li>
-                        <li><a href="#dining">Dining</a></li>
-                        <li><a href="#spritual">Spritual</a></li>
-                        <li><a href="#events">Events</a></li>
+                        <li data-category="All">All</a></li>
+                        <li data-category="Recreation">Recreation</a></li>
+                        <li data-category="Dining">Dining</a></li>
+                        <li data-category="Spiritual">Spiritual</a></li>
+                        <li data-category="Events">Events</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="content content-amenities">
-                <div class="card">
+                <div class="card animate" data-category="Recreation">
                     <div class="card-wrap">
-                        <div class="card-img">
+                        <div class="card-img amenity-img">
                             <img src="https://images.unsplash.com/photo-1567943346767-72780dd14cd5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                         </div>
 
@@ -96,9 +96,9 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card animate" data-category="Recreation">
                     <div class="card-wrap">
-                        <div class="card-img">
+                        <div class="card-img amenity-img">
                             <img src="https://images.unsplash.com/photo-1575783970733-1aaedde1db74?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                         </div>
 
@@ -120,9 +120,9 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card animate" data-category="Dining">
                     <div class="card-wrap">
-                        <div class="card-img">
+                        <div class="card-img amenity-img">
                             <img src="https://images.unsplash.com/photo-1494346480775-936a9f0d0877?q=80&w=2016&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                         </div>
 
@@ -144,9 +144,9 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card animate" data-category="Dining">
                     <div class="card-wrap">
-                        <div class="card-img">
+                        <div class="card-img amenity-img">
                             <img src="https://images.unsplash.com/photo-1585894711506-e492159d7fbc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                         </div>
 
@@ -168,10 +168,10 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card animate" data-category="Spiritual">
                     <div class="card-wrap">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1567943346767-72780dd14cd5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <div class="card-img amenity-img">
+                            <img src="https://plus.unsplash.com/premium_photo-1678916185608-5b3fe97e97fc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                         </div>
 
                         <div class="card-content">
@@ -192,9 +192,9 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card animate" data-category="Events">
                     <div class="card-wrap">
-                        <div class="card-img">
+                        <div class="card-img amenity-img">
                             <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                         </div>
 
@@ -218,7 +218,7 @@
             </div>
         </div>
 
-        <footer class="footer-container">
+        <footer class="footer-container animate">
             <div class="footer-wrap">
                 <div class="wrap">
                     <div class="footer-info">
@@ -299,12 +299,12 @@
 
     <!-- Modal -->
     <div class="modal">
-        <button id="back-to-top">
+        <button class="btn-top" id="back-to-top" aria-label="Back to top">
             <i class="fa-solid fa-arrow-up fa-2xl"></i>
         </button>
     </div>
 
+    <!-- Local JS -->
     <script type="module" src="../../src/script/client/main.js" defer></script>
-    <script src="../../src/script/client/our-menu.js" defer></script>
 </body>
 </html>

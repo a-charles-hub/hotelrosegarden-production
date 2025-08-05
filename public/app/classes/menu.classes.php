@@ -26,7 +26,7 @@
                     $this->connect()->beginTransaction();
 
                     // Fetch data
-                    $stmt = $this->connect()->prepare("SELECT id, menu_title, menu_category, menu_description, menu_url, menu_price, COUNT(*) OVER (PARTITION BY menu_category) AS category_total FROM menu ORDER BY menu_title ASC");
+                    $stmt = $this->connect()->prepare("SELECT id, menu_title, menu_category, menu_description, menu_url, menu_price, COUNT(*) OVER (PARTITION BY menu_category) AS category_total FROM menu ORDER BY menu_category ASC");
                     $stmt->execute();
 
                     if($stmt->rowCount() > 0) {

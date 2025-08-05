@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Menu</title>
+    <title>Our Menu | Hotel Rose Garden</title>
     <!-- Local CSS -->
     <link rel="stylesheet" href="../../src/styles/client/main.css">
     <link rel="stylesheet" href="../../src/styles/client/main-media-query.css">
@@ -61,44 +61,51 @@
         </header>
 
         <div class="content-container">
-            <div class="navigation">
+            <div class="navigation animate">
                 <div class="navigation-wrap">
                     <ul class="navigation-links">
-                        <li><a href="#all">All</a></li>
-                        <li><a href="#breakfast">Breakfast</a></li>
-                        <li><a href="#lunch">Lunch</a></li>
-                        <li><a href="#dinner">Dinner</a></li>
-                        <li><a href="#desserts">Vegetarian</a></li>
-                        <li><a href="#specials">Specials</a></li>
+                        <li data-category="Breakfast">Breakfast</li>
+                        <li data-category="Lunch">Lunch</li>
+                        <li data-category="Dinner">Dinner</li>
+                        <li data-category="Vegetarian">Vegetarian</li>
+                        <li data-category="Specials">Specials</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="content">
-                <div class="menu-container"></div>
+            <!-- TEMPLATE FOR CATEGORY SECTION -->
+            <div class="menu card-category content animate hide" id="menu-template">
+                <div class="category-title">
+                    <h2 class="category header"></h2>
+                </div>
+
+                <div class="menu-container animate"></div>
 
                 <!-- TEMPLATE CARD (hidden) -->
                 <div class="card-menu hide">
-                    <div class="card-wrap">
-                        <div class="card-img"></div>
-                        <div class="card-content">
+                    <div class="menu card-wrap">
+                        <div class="menu-img card-img"></div>
+
+                        <div class="menu card-content">
                             <div class="card-title">
                                 <h3 class="menu-title"></h3>
-                                <p class="price"></p>
-                            </div>
-                            <div class="card-category">
-                                <h4 class="menu-category"></h4>
                             </div>
                             <div class="card-description">
                                 <p class="menu-description"></p>
+                            </div>
+                            <div class="card-price">
+                                <p class="price"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Where new category sections will be inserted -->
+            <div class="category-sections animate" id="category-sections"></div>
         </div>
 
-        <footer class="footer-container">
+        <footer class="footer-container animate">
             <div class="footer-wrap">
                 <div class="wrap">
                     <div class="footer-info">
@@ -179,11 +186,12 @@
 
     <!-- Modal -->
     <div class="modal">
-        <button id="back-to-top">
+        <button class="btn-top" id="back-to-top" aria-label="Back to top">
             <i class="fa-solid fa-arrow-up fa-2xl"></i>
         </button>
     </div>
 
+    <!-- Local JS -->
     <script type="module" src="../../src/script/client/main.js" defer></script>
     <script src="../../src/script/client/clients.js" defer></script>
 </body>
