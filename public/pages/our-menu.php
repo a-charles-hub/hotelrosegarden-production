@@ -30,23 +30,55 @@
 
             <div class="header">
                 <nav class="nav">
+                    <!-- Logo -->
+                    <div class="mobile-logo">
+                        <img src="../../public/assets/img/logo.png" alt="Hotel Rose Garden">
+                    </div>
+
+                    <!-- Hamburger Menu -->
+                    <div class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation">    
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
                     <div class="nav-wrap">
-                        <ul class="nav-links">
+                        <!-- Navigation Links -->
+                        <ul class="nav-links left">
                             <li><a href="../../index.php">Overview</a></li>
-                            <li><a href="../pages/our-menu.php">Menu</a></li>
-                            <li><a href="../pages/accomodation.php">Accomodation</a></li>
-                            <li><a href="../pages/amenities.php">Amenities</a></li>
+                            <li><a href="../../public/pages/our-menu.php">Menu</a></li>
+                            <li><a href="">Accomodation</a></li>
+                            <li><a href="../../public/pages/amenities.php">Amenities</a></li>
                         </ul>    
                         
                         <!-- Logo -->
                         <div class="logo">
-                            <img src="../assets/img/logo.png" alt="Hotel Rose Garden">
+                            <img src="../../public/assets/img/logo.png" alt="Hotel Rose Garden">
                         </div>
 
                         <ul class="nav-links right">
                             <li><a href=""><i class="fa-solid fa-calendar-days"></i> Book Now</a></li>
                             <li><a href=""><i class="fa-solid fa-right-to-bracket"></i> Sign In</a></li>
                         </ul>
+
+
+                        <div class="socials">
+                            <span>
+                                <img src="../../public/assets/img/icons/facebook.svg" alt="facebook">
+                            </span>
+                            <span>
+                                <img src="../../public/assets/img/icons/instagram.svg" alt="instagram">
+                            </span>
+                            <span>
+                                <img src="../../public/assets/img/icons/whatsapp.svg" alt="whatsapp">
+                            </span>
+                            <span>
+                                <img src="../../public/assets/img/icons/twitter.svg" alt="twitter">
+                            </span>
+                        </div>
+
+                        <!-- Close Menu -->
+                        <div class="close-menu" id="close-menu" aria-label="Close navigation">    
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
                     </div>
                 </nav>
 
@@ -55,46 +87,67 @@
                         <h1 class="content-title">Our Menu</h1>
                         <h2 class="subtitle">A Taste of India, for Everyone</h2>
 
-                        <p class="description">Enjoy a rich journey through authentic Indian cuisine, where every dish is thoughtfully prepared with halal-certified ingredients and an emphasis on flavor, tradition, and inclusivity. Whether you're a local seeking comfort food or a traveler discovering new tastes, our menu offers a vibrant variety of vegan-friendly and vegetarian options—each crafted to honor India’s culinary heritage while welcoming every palate and preference.</p>
+                        <p class="description">Enjoy authentic Indian cuisine made with halal-certified ingredients. Our menu celebrates tradition and flavor, offering a vibrant selection of vegan and vegetarian dishes that welcome every palate and honor India’s rich culinary heritage.</p>
                     </div>
                 </div>
         </header>
 
         <div class="content-container">
-            <div class="navigation animate">
+            <div class="navigation">
                 <div class="navigation-wrap">
-                    <ul class="navigation-links">
-                        <li data-category="Breakfast">Breakfast</li>
-                        <li data-category="Lunch">Lunch</li>
-                        <li data-category="Dinner">Dinner</li>
-                        <li data-category="Vegetarian">Vegetarian</li>
-                        <li data-category="Specials">Specials</li>
-                    </ul>
+                    <div class="menu-links">
+                        <ul class="navigation-links">
+                            <li data-category="Beef Dishes">Beef Dishes</li>
+                            <li data-category="Breakfast">Breakfast</li>
+                            <li data-category="Chicken Dishes">Chicken Dishes</li>
+                            <li data-category="Lunch">Lunch</li>
+                            <li data-category="Desserts">Platters</li>
+                            <li data-category="Drinks">Drinks</li>
+                            <li data-category="Desserts">Desserts</li>
+                            <li data-category="Dinner">Dinner</li>
+                            <li data-category="Specials">Side Dishes</li>
+                            <li data-category="Vegetarian">Vegetarian</li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-burger-wrap">
+                        <div class="menu-burger-description">
+                            <span>Categories</span>
+                        </div>
+
+                        <div class="menu-burger" id="menu-burger" aria-label="Toggle menu">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                    </div>
                 </div>
+
+
             </div>
 
             <!-- TEMPLATE FOR CATEGORY SECTION -->
-            <div class="menu card-category content animate hide" id="menu-template">
-                <div class="category-title">
-                    <h2 class="category header"></h2>
-                </div>
+            <div class="menu card-category content hide" id="menu-template">
+                <div class="menu-category-section">
+                    <div class="category-title">
+                        <h2 class="category header"></h2>
+                    </div>
 
-                <div class="menu-container animate"></div>
+                    <div class="menu-container"></div>
 
-                <!-- TEMPLATE CARD (hidden) -->
-                <div class="card-menu hide">
-                    <div class="menu card-wrap">
-                        <div class="menu-img card-img"></div>
+                    <!-- TEMPLATE CARD (hidden) -->
+                    <div class="card-menu hide">
+                        <div class="menu card-wrap">
+                            <div class="menu-img card-img"></div>
 
-                        <div class="menu card-content">
-                            <div class="card-title">
-                                <h3 class="menu-title"></h3>
-                            </div>
-                            <div class="card-description">
-                                <p class="menu-description"></p>
-                            </div>
-                            <div class="card-price">
-                                <p class="price"></p>
+                            <div class="menu card-content">
+                                <div class="card-title">
+                                    <h3 class="menu-title"></h3>
+                                </div>
+                                <div class="card-description">
+                                    <p class="menu-description"></p>
+                                </div>
+                                <div class="card-price">
+                                    <p class="price"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -194,5 +247,6 @@
     <!-- Local JS -->
     <script type="module" src="../../src/script/client/main.js" defer></script>
     <script src="../../src/script/client/clients.js" defer></script>
+    <script type="module" src="../../src/script/client/our-menu.js" defer></script>
 </body>
 </html>

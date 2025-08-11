@@ -61,6 +61,7 @@ const renderByCategory = (categoryName, items, categoryTemplate, categorySection
     // Get the card container & card template inside this category section
     const cardContainer = sectionClone.querySelector('.menu-container');
     const cardTemplate = sectionClone.querySelector('.card-menu');
+    const category = sectionClone.querySelector('.menu-category-section');
 
     // Render each item in this category
     items.forEach(item => {
@@ -72,7 +73,8 @@ const renderByCategory = (categoryName, items, categoryTemplate, categorySection
         img.alt = item.title;
         img.loading = 'lazy';
         img.style.margin = '0 5px';
-
+        
+        category.id = item.category;
         cardClone.querySelector('.menu-title').textContent = item.title;
         cardClone.querySelector('.menu-description').textContent = item.description;
         cardClone.querySelector('.price').textContent = '₹' + item.price;

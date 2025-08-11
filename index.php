@@ -34,8 +34,19 @@
 
             <div class="header">
                 <nav class="nav">
+                    <!-- Logo -->
+                    <div class="mobile-logo">
+                        <img src="public/assets/img/logo.png" alt="Hotel Rose Garden">
+                    </div>
+
+                    <!-- Hamburger Menu -->
+                    <div class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation">    
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
                     <div class="nav-wrap">
-                        <ul class="nav-links">
+                        <!-- Navigation Links -->
+                        <ul class="nav-links left">
                             <li><a href="index.php">Overview</a></li>
                             <li><a href="public/pages/our-menu.php">Menu</a></li>
                             <li><a href="">Accomodation</a></li>
@@ -51,6 +62,27 @@
                             <li><a href=""><i class="fa-solid fa-calendar-days"></i> Book Now</a></li>
                             <li><a href=""><i class="fa-solid fa-right-to-bracket"></i> Sign In</a></li>
                         </ul>
+
+
+                        <div class="socials">
+                            <span>
+                                <img src="public/assets/img/icons/facebook.svg" alt="facebook">
+                            </span>
+                            <span>
+                                <img src="public/assets/img/icons/instagram.svg" alt="instagram">
+                            </span>
+                            <span>
+                                <img src="public/assets/img/icons/whatsapp.svg" alt="whatsapp">
+                            </span>
+                            <span>
+                                <img src="public/assets/img/icons/twitter.svg" alt="twitter">
+                            </span>
+                        </div>
+
+                        <!-- Close Menu -->
+                        <div class="close-menu" id="close-menu" aria-label="Close navigation">    
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
                     </div>
                 </nav>
 
@@ -126,7 +158,7 @@
             <div class="rose-pavilion animate">
                 <div class="gallery">
                     <div class="main-image">
-                        <img src="https://img.cdn-pictorem.com/uploads/collection/R/RT5LRO2KGR/900_Socratubik_IMG_1857071712.jpg" alt="" loading="lazy">
+                        <img src="https://plus.unsplash.com/premium_photo-1678916185608-5b3fe97e97fc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
                     </div>
 
                     <div class="thumnails">

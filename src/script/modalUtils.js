@@ -16,7 +16,6 @@
  * 
  */
 
-
 // Open Add Menu modal
 export const openModal = (modal, openBtn) => {
     // Check if openBtn is a single element or NodeList
@@ -98,7 +97,7 @@ export const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.1 // start animating when 25% is in view
+  threshold: 0.05 // start animating when 10% is in view
 });
 
 export const redirectTo = (btn, url) => {
@@ -128,4 +127,62 @@ export const cardNavigation = () => {
     });
 };
 
+/** Mobile Version */
+// Navbar toggle
+export const toggleNavbar = () => {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const navDisplay = document.querySelector('.nav-wrap');
 
+    hamburgerMenu.addEventListener('click', () => {
+        console.log('Hamburger menu clicked');
+        navDisplay.classList.add('visible');
+
+        hamburgerMenu.style.display = 'none';
+        closeMenu.style.display = 'block';
+    });
+
+    closeMenu.addEventListener('click', () => {
+        navDisplay.classList.remove('visible');
+
+        hamburgerMenu.style.display = 'block';
+        closeMenu.style.display = 'none';
+    });
+}
+
+// Menu toggle - our-menu.php
+export const menuToggle = (btn, container) => {
+    btn.addEventListener('click', () => {
+        // Check if the menuContainer is already toggled
+        if (container.classList.contains('visible')) {
+            // Already toggled → hide it
+            container.classList.remove('visible');
+            console.log('Menu closed');
+        } else {
+            // Not toggled → show it
+            container.classList.add('visible');
+            console.log('Menu opened');
+        }
+    });
+
+}
+
+export const menuCategorySelect = () => {
+    const navLinks = document.querySelectorAll('.menu-links li');
+    const menuLinks = document.querySelector('.menu-links');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+
+            const category = link.getAttribute('data-category');
+            const section = document.getElementById(category);
+
+            if(section) {
+                section.scrollIntoView({ behavior: "smooth" });
+
+                // Close the menu after selecting a category
+                menuLinks.classList.remove('visible');
+            }
+        });
+    });
+}

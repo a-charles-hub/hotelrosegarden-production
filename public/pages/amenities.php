@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../src/styles/client/main.css">
     <link rel="stylesheet" href="../../src/styles/client/layout.css">
     <link rel="stylesheet" href="../../src/styles/client/amenities.css">
+    <link rel="stylesheet" href="../../src/styles/client/main-media-query.css">
+    <link rel="stylesheet" href="../../src/styles/client/amenities-media-query.css">
     <!-- Favicon -->
     <link rel="icon" href="../assets/img/logo.png">
     <!-- Google Icons -->
@@ -28,23 +30,55 @@
 
             <div class="header">
                 <nav class="nav">
+                    <!-- Logo -->
+                    <div class="mobile-logo">
+                        <img src="../../public/assets/img/logo.png" alt="Hotel Rose Garden">
+                    </div>
+
+                    <!-- Hamburger Menu -->
+                    <div class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation">    
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
                     <div class="nav-wrap">
-                        <ul class="nav-links">
+                        <!-- Navigation Links -->
+                        <ul class="nav-links left">
                             <li><a href="../../index.php">Overview</a></li>
-                            <li><a href="../pages/our-menu.php">Menu</a></li>
-                            <li><a href="../pages/accomodation.php">Accomodation</a></li>
-                            <li><a href="../pages/amenities.php">Amenities</a></li>
+                            <li><a href="../../public/pages/our-menu.php">Menu</a></li>
+                            <li><a href="">Accomodation</a></li>
+                            <li><a href="../../public/pages/amenities.php">Amenities</a></li>
                         </ul>    
                         
                         <!-- Logo -->
                         <div class="logo">
-                            <img src="../assets/img/logo.png" alt="Hotel Rose Garden">
+                            <img src="../../public/assets/img/logo.png" alt="Hotel Rose Garden">
                         </div>
 
                         <ul class="nav-links right">
                             <li><a href=""><i class="fa-solid fa-calendar-days"></i> Book Now</a></li>
                             <li><a href=""><i class="fa-solid fa-right-to-bracket"></i> Sign In</a></li>
                         </ul>
+
+
+                        <div class="socials">
+                            <span>
+                                <img src="../../public/assets/img/icons/facebook.svg" alt="facebook">
+                            </span>
+                            <span>
+                                <img src="../../public/assets/img/icons/instagram.svg" alt="instagram">
+                            </span>
+                            <span>
+                                <img src="../../public/assets/img/icons/whatsapp.svg" alt="whatsapp">
+                            </span>
+                            <span>
+                                <img src="../../public/assets/img/icons/twitter.svg" alt="twitter">
+                            </span>
+                        </div>
+
+                        <!-- Close Menu -->
+                        <div class="close-menu" id="close-menu" aria-label="Close navigation">    
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
                     </div>
                 </nav>
 
@@ -53,7 +87,7 @@
                         <h1 class="content-title">Amenities</h1>
                         <h2 class="subtitle">Everything You Need, All in One Place</h2>
 
-                        <p class="description">Enjoy a wide range of thoughtfully curated amenities designed for comfort, leisure, and convenience. From spacious accommodations and scenic venues to a dedicated playground and cricket field, we offer indoor and outdoor dining experiences, a serene prayer hall, and everything in between — making every visit truly complete.</p>
+                        <p class="description">Enjoy a wide range of curated amenities designed for comfort, leisure, and convenience. From spacious rooms and scenic venues to playgrounds, a cricket field, indoor and outdoor dining, and a serene prayer hall — every visit feels complete.</p>
                     </div>
                 </div>
         </header>
@@ -68,6 +102,16 @@
                         <li data-category="Spiritual">Spiritual</a></li>
                         <li data-category="Events">Events</a></li>
                     </ul>
+                </div>
+
+                <div class="menu-burger-wrap" id="dropdown">
+                    <div class="menu-burger-description">
+                        <span>Categories</span>
+                    </div>
+
+                    <div class="dropdown" aria-label="Toggle menu">
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
                 </div>
             </div>
 
@@ -306,5 +350,6 @@
 
     <!-- Local JS -->
     <script type="module" src="../../src/script/client/main.js" defer></script>
+    <script type="module" src="../../src/script/client/amenities.js" defer></script>
 </body>
 </html>
