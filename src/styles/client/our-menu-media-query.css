@@ -37,10 +37,35 @@
     .menu-burger-wrap {
         display: none;
     }
+
+    .navigation-links {
+        gap: 2em;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .navigation-links li {
+        font-size: clamp(16px, 2vw, 16px);
+        white-space: nowrap; /* prevent text inside li from breaking into multiple lines */
+    }
 }
 
 /* Tablets and Phones */
 @media screen and (max-width: 992px) {
+    .header-wrap h1 {
+        font-size: clamp(48px, 5vw, 64px) !important;
+    }
+
+    .header-wrap .subtitle {
+        font-size: clamp(20px, 2vw, 24px) !important;
+    }
+
+    .header-wrap .description {
+        font-size: clamp(14px, 2vw, 18px) !important;
+    }
+
     .content-container {
         padding: 0 20px 20px;
     }

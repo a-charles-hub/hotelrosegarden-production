@@ -103,6 +103,12 @@ ul {
     text-align: center;
 }
 
+#menu-template {
+    border: none;
+    padding: 0;
+}
+
+
 /* Card Menu */
 .menu-container {
     padding: 0 !important;

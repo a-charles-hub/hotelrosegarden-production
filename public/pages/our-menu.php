@@ -45,7 +45,7 @@
                         <ul class="nav-links left">
                             <li><a href="../../index.php">Overview</a></li>
                             <li><a href="../../public/pages/our-menu.php">Menu</a></li>
-                            <li><a href="">Accomodation</a></li>
+                            <li><a href="../../public/pages/accomodations.php">Accomodations</a></li>
                             <li><a href="../../public/pages/amenities.php">Amenities</a></li>
                         </ul>    
                         
@@ -101,7 +101,7 @@
                             <li data-category="Breakfast">Breakfast</li>
                             <li data-category="Chicken Dishes">Chicken Dishes</li>
                             <li data-category="Lunch">Lunch</li>
-                            <li data-category="Desserts">Platters</li>
+                            <li data-category="Platters">Platters</li>
                             <li data-category="Drinks">Drinks</li>
                             <li data-category="Desserts">Desserts</li>
                             <li data-category="Dinner">Dinner</li>
@@ -181,41 +181,43 @@
                         </div>
                     </div>
 
-                    <div class="links footer-links">
-                        <div class="footer-heading">Stay With Us</div>
-                        <ul>
-                            <li><a href="#">Dining</a></li>
-                            <li><a href="#">Weddings</a></li>
-                            <li><a href="#">Meetings & Events</a></li>
-                            <li><a href="#">Rooms & Suites</a></li>
-                            <li><a href="#">Amenities</a></li>
-                        </ul>
-                    </div>
+                    <div class="footer-group">
+                        <div class="links footer-links">
+                            <div class="footer-heading">Stay With Us</div>
+                            <ul>
+                                <li><a href="#">Dining</a></li>
+                                <li><a href="#">Weddings</a></li>
+                                <li><a href="#">Meetings & Events</a></li>
+                                <li><a href="#">Rooms & Suites</a></li>
+                                <li><a href="#">Amenities</a></li>
+                            </ul>
+                        </div>
 
-                    <div class="links help-center">
-                        <div class="footer-heading">Experience More</div>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Franchise Inquiry</a></li>
-                        </ul>
-                    </div>
+                        <div class="links help-center">
+                            <div class="footer-heading">Experience More</div>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Franchise Inquiry</a></li>
+                            </ul>
+                        </div>
 
-                    <div class="socials">
-                        <div class="footer-heading">Follow Us</div>
+                        <div class="socials">
+                            <div class="footer-heading">Follow Us</div>
 
-                        <span>
-                            <img src="../assets/img/icons/facebook.svg" alt="facebook">
-                        </span>
-                        <span>
-                            <img src="../assets/img/icons/instagram.svg" alt="instagram">
-                        </span>
-                        <span>
-                            <img src="../assets/img/icons/whatsapp.svg" alt="whatsapp">
-                        </span>
-                        <span>
-                            <img src="../assets/img/icons/twitter.svg" alt="twitter">
-                        </span>
+                            <span>
+                                <img src="../assets/img/icons/facebook.svg" alt="facebook">
+                            </span>
+                            <span>
+                                <img src="../assets/img/icons/instagram.svg" alt="instagram">
+                            </span>
+                            <span>
+                                <img src="../assets/img/icons/whatsapp.svg" alt="whatsapp">
+                            </span>
+                            <span>
+                                <img src="../assets/img/icons/twitter.svg" alt="twitter">
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>

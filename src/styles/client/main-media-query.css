@@ -78,7 +78,6 @@
 
     .socials {
         order: 4;
-        margin-top: 2em;
     }
 
     .socials img {
@@ -397,6 +396,19 @@
         flex-direction: column;
     }
 
+    .footer-wrap .wrap {
+        width: 100vw !important;
+    }
+
+    .footer-group {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        
+    }
+
     .contact-info {
         display: flex;
         flex-direction: column;
@@ -438,7 +450,7 @@
 
     .footer-hotel-info {
         display: flex;
-        align-items: center;
+        align-items: start;
     }
 
     .footer-info .logo {
@@ -451,7 +463,7 @@
     .help-center,
     .socials,
     .footer-hotel-info {
-        text-align: center !important;
+        text-align: start !important;
     }
 
     .footer .title-wrap .title {
@@ -469,8 +481,11 @@
 
     .footer-info {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
+        order: 2;
+        padding: 0 20px;
+        justify-content: start;
     }
 
     .socials span {
@@ -488,6 +503,7 @@
         align-items: center;
         padding: none;
         gap: 0.5em;
+        order: 3;
     }
 
     .copyright {
@@ -539,6 +555,35 @@
     .socials img {
         width: 24px;
         height: 24px;
+    }
+
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+        justify-content: center;
+    }
+
+    .footer-hotel-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-group {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-links,
+    .help-center,
+    .socials,
+    .footer-hotel-info {
+        text-align: center !important;
     }
 }
 

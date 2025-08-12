@@ -64,6 +64,7 @@ ul {
 
 .card {
     background: #FFFFFF;
+    transition: transform 0.5s ease;
 }
 
 .card-wrap {
@@ -116,6 +117,12 @@ ul {
     letter-spacing: 1px;
     line-height: 22px;
     text-align: center;
+}
+
+.card:hover {
+    transform: rotateX(5deg) rotateY(5deg) scale(1.05);
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
 /* Footer */

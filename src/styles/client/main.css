@@ -123,7 +123,7 @@ ul {
     font-family: var(--font-body);
 }
 
-.socials {
+.nav-wrap .socials {
     display: none;
 }
 
@@ -565,6 +565,14 @@ ul {
     color: #F2F2F2;
     position: relative;
     padding-top: 300px;
+}
+
+.footer-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4em;
+    width: 40vw;
 }
 
 .footer-wrap .wrap {

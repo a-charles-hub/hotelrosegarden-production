@@ -1,256 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vanilla JS Responsive Slider</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-
-  .content-amenities {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 20px;
-    padding: 10px 0;
-    scrollbar-width: none; /* Firefox */
-  }
-  .content-amenities::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
-  }
-
-  .card {
-    flex: 0 0 auto;
-    width: 280px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-
-  .card-img img {
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    display: block;
-  }
-
-  .card-content {
-    padding: 10px;
-  }
-
-  .card-title h3 {
-    margin: 0 0 5px;
-    font-size: 1.2rem;
-  }
-
-  .card-category h4 {
-    margin: 0 0 10px;
-    font-weight: normal;
-    color: #666;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-  }
-
-  .card-description p {
-    font-size: 0.9rem;
-    margin: 0;
-    color: #444;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .card {
-      width: 220px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .card {
-      width: 180px;
-    }
-  }
-
-  /* Controls */
-  .slider-controls {
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  .slider-controls button {
-    background-color: #007bff;
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    margin: 0 10px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .slider-controls button:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
+  <style>
+    .booking-bar {
+  display: flex;
+  gap: 16px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
 
-<div class="content content-amenities">
-  <div class="card animate" data-category="Recreation">
-    <div class="card-img amenity-img">
-      <img src="https://images.unsplash.com/photo-1567943346767-72780dd14cd5?q=80&w=600&auto=format&fit=crop" alt="Cricket Grounds" />
-    </div>
-    <div class="card-content">
-      <div class="card-title">
-        <h3>THE CRICKET GROUNDS</h3>
-      </div>
-      <div class="card-category">
-        <h4>Recreation</h4>
-      </div>
-      <div class="card-description">
-        <p>Enjoy a game or practice your swing on our well-maintained cricket field...</p>
-      </div>
-    </div>
-  </div>
+.booking-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 110px;
+}
 
-  <div class="card animate" data-category="Recreation">
-    <div class="card-img amenity-img">
-      <img src="https://images.unsplash.com/photo-1575783970733-1aaedde1db74?q=80&w=600&auto=format&fit=crop" alt="Play & Explore" />
-    </div>
-    <div class="card-content">
-      <div class="card-title">
-        <h3>PLAY & EXPLORE</h3>
-      </div>
-      <div class="card-category">
-        <h4>Recreation</h4>
-      </div>
-      <div class="card-description">
-        <p>A fun-filled spot for children to laugh, run, and climb!...</p>
-      </div>
-    </div>
-  </div>
+.booking-item label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 
-  <div class="card animate" data-category="Dining">
-    <div class="card-img amenity-img">
-      <img src="https://images.unsplash.com/photo-1494346480775-936a9f0d0877?q=80&w=600&auto=format&fit=crop" alt="Indoor Dining" />
-    </div>
-    <div class="card-content">
-      <div class="card-title">
-        <h3>INDOOR DINING</h3>
-      </div>
-      <div class="card-category">
-        <h4>Dining</h4>
-      </div>
-      <div class="card-description">
-        <p>Enjoy a comfortable and inviting dining experience indoors...</p>
-      </div>
-    </div>
-  </div>
+.date-btn, .guests-btn {
+  padding: 10px 14px;
+  font-size: 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #222;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: inset 0 0 0 1px #ddd;
+}
 
-    <div class="card animate" data-category="Dining">
-    <div class="card-img amenity-img">
-      <img src="https://images.unsplash.com/photo-1494346480775-936a9f0d0877?q=80&w=600&auto=format&fit=crop" alt="Indoor Dining" />
-    </div>
-    <div class="card-content">
-      <div class="card-title">
-        <h3>INDOOR DINING</h3>
-      </div>
-      <div class="card-category">
-        <h4>Dining</h4>
-      </div>
-      <div class="card-description">
-        <p>Enjoy a comfortable and inviting dining experience indoors...</p>
-      </div>
-    </div>
-  </div>
+.date-btn:hover, .guests-btn:hover,
+.date-btn:focus-visible, .guests-btn:focus-visible {
+  outline: none;
+  border-color: #ff385c;
+  box-shadow: 0 0 0 3px rgb(255 56 92 / 0.3);
+}
 
-    <div class="card animate" data-category="Dining">
-    <div class="card-img amenity-img">
-      <img src="https://images.unsplash.com/photo-1494346480775-936a9f0d0877?q=80&w=600&auto=format&fit=crop" alt="Indoor Dining" />
-    </div>
-    <div class="card-content">
-      <div class="card-title">
-        <h3>INDOOR DINING</h3>
-      </div>
-      <div class="card-category">
-        <h4>Dining</h4>
-      </div>
-      <div class="card-description">
-        <p>Enjoy a comfortable and inviting dining experience indoors...</p>
-      </div>
-    </div>
-  </div>
+.booking-btn {
+  flex-shrink: 0;
+  background-color: #ff385c;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 0 24px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 12px rgb(255 56 92 / 0.5);
+  transition: background-color 0.3s ease;
+}
 
-    <div class="card animate" data-category="Dining">
-    <div class="card-img amenity-img">
-      <img src="https://images.unsplash.com/photo-1494346480775-936a9f0d0877?q=80&w=600&auto=format&fit=crop" alt="Indoor Dining" />
-    </div>
-    <div class="card-content">
-      <div class="card-title">
-        <h3>INDOOR DINING</h3>
-      </div>
-      <div class="card-category">
-        <h4>Dining</h4>
-      </div>
-      <div class="card-description">
-        <p>Enjoy a comfortable and inviting dining experience indoors...</p>
-      </div>
-    </div>
-  </div>
+.booking-btn:hover,
+.booking-btn:focus-visible {
+  background-color: #e02c4d;
+  outline: none;
+}
 
-    <div class="card animate" data-category="Dining">
-    <div class="card-img amenity-img">
-      <img src="https://images.unsplash.com/photo-1494346480775-936a9f0d0877?q=80&w=600&auto=format&fit=crop" alt="Indoor Dining" />
+.booking-btn i {
+  font-size: 18px;
+}
+
+/* flatpickr overrides */
+.flatpickr-calendar {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgb(0 0 0 / 0.15) !important;
+  border: none !important;
+}
+
+.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange {
+  background: #ff385c !important;
+  color: white !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.flatpickr-day.inRange {
+  background: #ff385c33 !important;
+  color: #ff385c !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.flatpickr-months {
+  border-bottom: none !important;
+}
+
+.flatpickr-weekday {
+  font-weight: 600 !important;
+  color: #777 !important;
+}
+
+.flatpickr-day.today {
+  border-color: #ff385c !important;
+}
+
+.flatpickr-month {
+  color: #ff385c !important;
+  font-weight: 700 !important;
+}
+
+  </style>
+  <div class="booking-bar">
+  <form action="" class="booking-form" onsubmit="return false;">
+    <div class="booking-item">
+      <label for="checkinBtn">Check in</label>
+      <button type="button" id="checkinBtn" class="date-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="flatpickr-calendar">
+        Add dates
+      </button>
+      <input type="hidden" id="checkin" name="checkin" />
     </div>
-    <div class="card-content">
-      <div class="card-title">
-        <h3>INDOOR DINING</h3>
-      </div>
-      <div class="card-category">
-        <h4>Dining</h4>
-      </div>
-      <div class="card-description">
-        <p>Enjoy a comfortable and inviting dining experience indoors...</p>
-      </div>
+
+    <div class="booking-item">
+      <label for="checkoutBtn">Check out</label>
+      <button type="button" id="checkoutBtn" class="date-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="flatpickr-calendar">
+        Add dates
+      </button>
+      <input type="hidden" id="checkout" name="checkout" />
     </div>
-  </div>
-  <!-- Add more cards similarly -->
+
+    <div class="booking-item">
+      <label for="guestsBtn">Guests</label>
+      <button type="button" id="guestsBtn" class="guests-btn">Add guests</button>
+      <input type="hidden" id="guests" name="guests" value="1" />
+    </div>
+
+    <button class="booking-btn" aria-label="Search" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i> Search
+    </button>
+  </form>
 </div>
 
-<div class="slider-controls">
-  <button id="prevBtn" aria-label="Previous">Prev</button>
-  <button id="nextBtn" aria-label="Next">Next</button>
-</div>
+<!-- Hidden input for flatpickr -->
+<input type="text" id="flatpickrInput" style="position:absolute; left:-9999px; top:-9999px;" />
+
+<!-- Include flatpickr -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <script>
-  const container = document.querySelector('.content-amenities');
-  const nextBtn = document.getElementById('nextBtn');
-  const prevBtn = document.getElementById('prevBtn');
-  const scrollAmount = 300;
+  const checkinBtn = document.getElementById('checkinBtn');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const checkinInput = document.getElementById('checkin');
+  const checkoutInput = document.getElementById('checkout');
+  const flatpickrInput = document.getElementById('flatpickrInput');
 
-  nextBtn.addEventListener('click', () => {
-    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  const fp = flatpickr(flatpickrInput, {
+    mode: "range",
+    minDate: "today",
+    dateFormat: "M d, Y",
+    onClose: function(selectedDates) {
+      if (selectedDates.length === 2) {
+        checkinBtn.textContent = fp.formatDate(selectedDates[0], "M d, Y");
+        checkoutBtn.textContent = fp.formatDate(selectedDates[1], "M d, Y");
+        checkinInput.value = selectedDates[0].toISOString().split("T")[0];
+        checkoutInput.value = selectedDates[1].toISOString().split("T")[0];
+      }
+    }
   });
 
-  prevBtn.addEventListener('click', () => {
-    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
-
-  function updateButtons() {
-    prevBtn.disabled = container.scrollLeft === 0;
-    nextBtn.disabled = container.scrollLeft + container.clientWidth >= container.scrollWidth - 1;
-  }
-
-  container.addEventListener('scroll', updateButtons);
-  window.addEventListener('resize', updateButtons);
-
-  updateButtons();
+  checkinBtn.addEventListener("click", () => fp.open());
+  checkoutBtn.addEventListener("click", () => fp.open());
 </script>
 
 </body>
