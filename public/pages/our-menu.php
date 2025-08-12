@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Menu | Hotel Rose Garden</title>
     <!-- Local CSS -->
-    <link rel="stylesheet" href="../../src/styles/client/main.css">
+    <link rel="preload" rel="stylesheet" href="../../src/styles/client/main.css">
     <link rel="stylesheet" href="../../src/styles/client/main-media-query.css">
     <link rel="stylesheet" href="../../src//styles/client/our-menu.css">
     <link rel="stylesheet" href="../../src/styles/client/layout.css">
@@ -15,9 +15,9 @@
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <!-- Google Fonts / Montserrat-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Fonts / Cizel -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome CDN -->
     <script src="https://kit.fontawesome.com/6c2535758c.js" crossorigin="anonymous"></script>
 </head>
