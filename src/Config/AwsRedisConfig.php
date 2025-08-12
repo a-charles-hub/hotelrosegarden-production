@@ -1,23 +1,29 @@
 <?php
     namespace App\Config;
 
-    require '../../../vendor/autoload.php';
+    require __DIR__ . '/../../vendor/autoload.php';  // Adjust path if needed
+    
     use Predis\Client as RedisClient;
+    use Dotenv\Dotenv;
 
+    $dotenv = Dotenv::createImmutable(__DIR__,'../../.env');
+    $dotenv->load();
 
     class AwsRedisConfig {
         private $redis;
 
         public function __construct() {
-            // Load environment variables from .env file
-            $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-            $dotenv->load();
+            // Declare variables
+            $redis_host = $_ENV['REDIS_LABS_ENDPOINT'];
+            $redis_password = $_ENV['REDIS_PASSWORD'];
+            $redis_port = $_ENV['REDIS_PORT'];
 
             try {
                 $this->redis = new RedisClient([
                     'scheme' => 'tcp',
-                    'host' => '127.0.0.1',
-                    'port' => 6379,
+                    'host' => $redis_host,
+                    'port' => $redis_port,
+                    'password' => $redis_password,
                 ]);
             } catch (Exception $e) {
                 echo json_encode(['status' => 'error', 'message' => 'Redis connection failed: ' . $e->getMessage()]);

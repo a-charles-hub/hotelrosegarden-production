@@ -12,6 +12,9 @@
 
                 if($cachedData) {
                     $menus = json_decode($cachedData, true);
+                    
+                    // Add header so you can check in DevTools
+                    header('X-Redis-Cache: HIT');
 
                     $response = [
                         'success' => true,
@@ -57,6 +60,9 @@
 
                         // Store in redis for 30 days
                         $redis_cache->setex('menus', 2592000, json_encode($menus));
+                        
+                        // Add header for DevTools
+                        header('X-Redis-Cache: MISS');
 
                         $response = [
                             'success' => true,
