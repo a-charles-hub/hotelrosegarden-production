@@ -29,7 +29,7 @@
         <!-- Header starts -->
         <header class="header-container">
             <div class="background-container">
-                <img src="https://images.unsplash.com/photo-1591920476948-da986641e66a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="public/assets/img/background/index.avif" alt="">
             </div>
 
             <div class="header">
