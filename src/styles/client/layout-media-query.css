@@ -1,0 +1,119 @@
+/* Mobile & Tablets*/
+@media screen and (max-width: 1024px) {
+    .prefooter {
+        height: 600px;
+        gap: 50px;
+    }
+
+    .prefooter-image img {
+        width: 400px;
+        height: 350px;
+        object-fit: cover;
+    }
+    
+    .prefooter-details {
+        height: 350px;
+        width: fit-content;
+        gap: 10px !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .insta-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 100%;
+    }
+
+    .footer-container {
+        padding: 0 4%; /* gives a visual margin inside */
+    }
+
+    .footer-end {
+        padding: 0 4%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .prefooter {
+        height: 400px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .prefooter-image img {
+        width: 350px;
+        height: 200px;
+        margin-top: 60px;
+    }
+
+    .prefooter-details {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .prefooter-heading h2 {
+        font-size: clamp(18px, 2vw, 20px);
+        line-height: 32px;
+    }
+
+    .prefooter-location span {
+        font-size: 14px;
+    }
+
+    .prefooter-heading,
+    .prefooter-location {
+        text-align: center;
+    }
+
+    .instagram-gallery {
+        margin-bottom: 10px;
+    }
+
+    .instagram {
+        margin-top: 60px;
+    }
+
+    .instagram-heading {
+        padding: 10px 0;
+    }
+
+    .instagram-heading h2 {
+        font-size: 18px;
+    }
+
+    .insta-grid {
+        margin: 5px !important;
+        gap: 5px;
+    }
+
+    .insta-grid img {
+          border-radius: none !important;
+    }
+
+    .footer-container {
+        margin: 40px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+    }
+
+    .footer-wrap.about,
+    .footer-wrap.connect {
+        display: flex;
+        align-items: end;
+    }
+
+    .footer-wrap .address .location {
+        display: inline-block;
+        max-width: 200px; /* adjust width as needed */
+        white-space: pre-line; /* allows line breaks from \n */
+    }
+
+    .footer-end {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+}

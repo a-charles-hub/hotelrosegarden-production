@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../src/styles/client/main-media-query.css">
     <link rel="stylesheet" href="../../src/styles/client/accomodations.css">
     <link rel="stylesheet" href="../../src/styles/client/accomodations-media-query.css">
+    <link rel="stylesheet" href="../../src/styles/client/layout-media-query.css">
 
     <!-- Flatpickr CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -123,16 +124,16 @@
         <!-- Main content -->
         <div class="accomodations">
             <section class="introduction">
-                <div class="introduction-heading">
+                <div class="introduction-heading animate">
                     <h2>Welcome to Your Home Away From Home - Hotel Rose Garden</h2>
                 </div>
 
-                <div class="introduction-subheading">
+                <div class="introduction-subheading animate">
                     <h3>Kick back, relax, and make yourself at home.</h3>
                 </div>
 
                 <div class="introduction-gallery">
-                    <div class="group-1">
+                    <div class="group-1 animate">
                         <div class="images image-1">
                             <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image 1" title="image 1">
                         </div>
@@ -146,7 +147,7 @@
                         </div>
                     </div>
 
-                    <div class="group-2">
+                    <div class="group-2 animate">
                         <div class="images image-4">
                             <img src="https://images.unsplash.com/photo-1679310289994-9033a196b136?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image 4" title="image 4">
                         </div>
@@ -162,379 +163,191 @@
                 </div>
             </section>
 
-            <section class="rooms">
-                <div class="our-rooms">
-                    <div class="room-heading">
-                        <h2>Our Rooms</h2>
+            <section class="rooms-container">
+                <div class="room-dropdown-nav animate">
+                    <span class="show-label">SHOW</span>
+                    
+                    <div class="dropdown-wrapper">
+                        <select class="room-dropdown">
+                        <option value="all">All Rooms</option>
+                        <option value="one">One Bedroom</option>
+                        <option value="two">Two Bedrooms</option>
+                        <option value="three">Three Bedrooms</option>
+                        </select>
+                        <i class="fa-solid fa-caret-down dropdown-icon"></i>
+                    </div>
+                </div>
+
+                <div class="rooms animate">
+                    <div class="room" data-category="Two Bedrooms">
+                        <div class="room-image">
+                            <img src="https://images.unsplash.com/photo-1648383228240-6ed939727ad6?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+
+                            <span class="room-detail">Twin Room</span>
+                        </div>
                     </div>
 
-                    <div class="rooms-gallery">
-                        <div class="room">
-                            <div class="room-card">
-                                <div class="room-image">
-                                    <img src="https://images.unsplash.com/photo-1626868449668-fb47a048d9cb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                                </div>
+                    <div class="room animate">
+                        <div class="room-image" data-category="Three Bedrooms">
+                            <img src="https://images.unsplash.com/photo-1560184897-67f4a3f9a7fa?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
 
-                                <div class="room-details">
-                                    <div class="wrap">
-                                        <div class="room-title">
-                                            <span>Deluxe Room</span>
-                                        </div>
-
-                                        <div class="room-price">
-                                            <span>$49.99 per night</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="room-description">
-                                        <span>Spacious double room with modern décor, comfy beds, and all essential amenities for a relaxing stay.</span>
-                                    </div>
-
-                                    <div class="room-amenities">
-                                        <span class="amenities-title">Amenities</span>
-
-                                        <span class="wifi">
-                                            <i class="fa-solid fa-wifi"></i>
-                                            <span class="text">Free Wifi</span>
-                                        </span>
-
-                                        <span class="aircon">
-                                            <i class="fa-solid fa-wind"></i>
-                                            <span class="text">Airconditioner</span>
-                                        </span>
-
-                                        <span class="tv">
-                                            <i class="fa-solid fa-tv"></i>
-                                            <span class="text">TV</span>
-                                        </span>
-                                    </div>
-
-                                    <div class="room-descriptor">
-                                        <span>Simple. Cozy. Comfortable</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <span class="room-detail">Family Room</span>
                         </div>
+                    </div>
 
-                        <div class="room">
-                            <div class="room-card">
-                                <div class="room-image">
-                                    <img src="https://plus.unsplash.com/premium_photo-1675615667752-2ccda7042e7e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                                </div>
+                    <div class="room animate">
+                        <div class="room-image" data-category="Two Bedrooms">
+                            <img src="https://plus.unsplash.com/premium_photo-1671269705768-cad27668134c?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
 
-                                <div class="room-details">
-                                    <div class="wrap">
-                                        <div class="room-title">
-                                            <span>Standard Room</span>
-                                        </div>
-
-                                        <div class="room-price">
-                                            <span>$49.99 per night</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="room-description">
-                                        <span >A comfortable and practical room designed to meet all your basic needs. Ideal for travelers seeking convenience and value, the Standard Room offers a cozy space to rest and recharge.</span>
-                                    </div>
-
-                                    <div class="room-amenities">
-                                        <span class="amenities-title">Amenities</span>
-                                        
-                                        <span class="wifi">
-                                            <i class="fa-solid fa-wifi"></i>
-                                            <span class="text">Free Wifi</span>
-                                        </span>
-
-                                        <span class="aircon">
-                                            <i class="fa-solid fa-wind"></i>
-                                            <span class="text">Airconditioner</span>
-                                        </span>
-
-                                        <span class="tv">
-                                            <i class="fa-solid fa-tv"></i>
-                                            <span class="text">TV</span>
-                                        </span>
-                                    </div>
-
-                                    <div class="room-descriptor">
-                                        <span>Simple. Cozy. Comfortable</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <span class="room-detail">Deluxe Room</span>
                         </div>
+                    </div>
 
-                        <div class="room">
-                            <div class="room-card">
-                                <div class="room-image">
-                                    <img src="https://plus.unsplash.com/premium_photo-1661963657190-ecdd1ca794f9?q=80&w=1129&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                                </div>
+                    <div class="room animate">
+                        <div class="room-image" data-category="One Bedroom">
+                            <img src="https://plus.unsplash.com/premium_photo-1661963657190-ecdd1ca794f9?q=80&w=1129&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
 
-                                <div class="room-details">
-                                    <div class="wrap">
-                                        <div class="room-title">
-                                            <span>Junior Suite</span>
-                                        </div>
-
-                                        <div class="room-price">
-                                            <span>$49.99 per night</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="room-description">
-                                        <span>Spacious double room with modern décor, comfy beds, and all essential amenities for a relaxing stay.</span>
-                                    </div>
-
-                                    <div class="room-amenities">
-                                        <span class="amenities-title">Amenities</span>
-
-                                        <span class="wifi">
-                                            <i class="fa-solid fa-wifi"></i>
-                                            <span class="text">Free Wifi</span>
-                                        </span>
-
-                                        <span class="aircon">
-                                            <i class="fa-solid fa-wind"></i>
-                                            <span class="text">Airconditioner</span>
-                                        </span>
-
-                                        <span class="tv">
-                                            <i class="fa-solid fa-tv"></i>
-                                            <span class="text">TV</span>
-                                        </span>
-                                    </div>
-
-                                    <div class="room-descriptor">
-                                        <span>Simple. Cozy. Comfortable</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <span class="room-detail">Junior Room</span>
                         </div>
+                    </div>
 
-                        <div class="room">
-                            <div class="room-card">
-                                <div class="room-image">
-                                    <img src="https://images.unsplash.com/photo-1560184897-67f4a3f9a7fa?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                                </div>
+                    <div class="room animate">
+                        <div class="room-image" data-category="Two Bedrooms">
+                            <img src="https://images.unsplash.com/photo-1718851972754-6638b49b4775?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
 
-                                <div class="room-details">
-                                    <div class="wrap">
-                                        <div class="room-title">
-                                            <span>Family Room</span>
-                                        </div>
-
-                                        <div class="room-price">
-                                            <span>$49.99 per night</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="room-description">
-                                        <span class="text">Spacious double room with modern décor, comfy beds, and all essential amenities for a relaxing stay.</span>
-                                    </div>
-
-                                    <div class="room-amenities">
-                                        <span class="amenities-title">Amenities</span>
-
-                                        <span class="wifi">
-                                            <i class="fa-solid fa-wifi"></i>
-                                            <span class="text">Free Wifi</span>
-                                        </span>
-
-                                        <span class="aircon">
-                                            <i class="fa-solid fa-wind"></i>
-                                            <span class="text">Airconditioner</span>
-                                        </span>
-
-                                        <span class="tv">
-                                            <i class="fa-solid fa-tv"></i>
-                                            <span class="text">TV</span>
-                                        </span>
-                                    </div>
-
-                                    <div class="room-descriptor">
-                                        <span>Simple. Cozy. Comfortable</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <span class="room-detail">Premium Room</span>
                         </div>
+                    </div>
 
-                        <div class="room">
-                            <div class="room-card">
-                                <div class="room-image">
-                                    <img src="https://images.unsplash.com/photo-1648383228240-6ed939727ad6?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                                </div>
+                    <div class="room animate">
+                        <div class="room-image" data-category="Two Bedrooms">
+                            <img src="https://images.unsplash.com/photo-1664227430717-9a62112984cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
 
-                                <div class="room-details">
-                                    <div class="wrap">
-                                        <div class="room-title">
-                                            <span>Twin Room</span>
-                                        </div>
-
-                                        <div class="room-price">
-                                            <span>$49.99 per night</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="room-description">
-                                        <span>Spacious double room with modern décor, comfy beds, and all essential amenities for a relaxing stay.</span>
-                                    </div>
-
-                                    <div class="room-amenities">
-                                        <span class="amenities-title">Amenities</span>
-
-                                        <span class="wifi">
-                                            <i class="fa-solid fa-wifi"></i>
-                                            <span class="text">Free Wifi</span>
-                                        </span>
-
-                                        <span class="aircon">
-                                            <i class="fa-solid fa-wind"></i>
-                                            <span class="text">Airconditioner</span>
-                                        </span>
-
-                                        <span class="tv">
-                                            <i class="fa-solid fa-tv"></i>
-                                            <span class="text">TV</span>
-                                        </span>
-                                    </div>
-
-                                    <div class="room-descriptor">
-                                        <span>Simple. Cozy. Comfortable</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="room">
-                            <div class="room-card">
-                                <div class="room-image">
-                                    <img src="https://plus.unsplash.com/premium_photo-1661957292212-3dfdc45303ea?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                                </div>
-
-                                <div class="room-details">
-                                    <div class="wrap">
-                                        <div class="room-title">
-                                            <span>Executive Room</span>
-                                        </div>
-
-                                        <div class="room-price">
-                                            <span>$49.99 per night</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="room-description">
-                                        <span>Spacious double room with modern décor, comfy beds, and all essential amenities for a relaxing stay.</span>
-                                    </div>
-
-                                    <div class="room-amenities">
-                                        <span class="amenities-title">Amenities</span>
-
-                                        <span class="wifi">
-                                            <i class="fa-solid fa-wifi"></i>
-                                            <span class="text">Free Wifi</span>
-                                        </span>
-
-                                        <span class="aircon">
-                                            <i class="fa-solid fa-wind"></i>
-                                            <span class="text">Airconditioner</span>
-                                        </span>
-
-                                        <span class="tv">
-                                            <i class="fa-solid fa-tv"></i>
-                                            <span class="text">TV</span>
-                                        </span>
-                                    </div>
-
-                                    <div class="room-descriptor">
-                                        <span>Simple. Cozy. Comfortable</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <span class="room-detail">Standard Room</span>
                         </div>
                     </div>
                 </div>
+
             </section>
         </div>
 
-        <footer class="footer-container animate">
-            <div class="footer-wrap">
-                <div class="wrap">
-                    <div class="footer-info">
-                        <div class="logo">
-                            <img src="../assets/img/logo.png" alt="logo">
-                        </div>
+        <!-- Prefooter -->
+         <div class="prefooter animate">
+            <div class="prefooter-image">
+                <img src="https://images.unsplash.com/photo-1535827841776-24afc1e255ac?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
+            </div>
 
-                        <div class="footer-hotel-info">
-                            <div class="footer-heading">Hotel Rose Garden</div>
-                            
-                            <span class="sub-heading address">
-                                <i class="fa-solid fa-location-dot"></i>Ankleshwar, Nana Borsara
-                                Gujarat 394115, India
-                            </span>
-                            <span class="sub-heading email">
-                                <i class="fa-solid fa-envelope"></i>contact@hotelrosegarden.in
-                            </span>
-                            <span class="sub-heading phone-number">
-                                <i class="fa-solid fa-phone"></i>+91 98765 43210
-                            </span>
-                        </div>
+            <div class="prefooter-details">
+                <div class="prefooter-heading">
+                    <h2>Enjoy Your Stay At Hotel Rose Garden</h2>
+                </div>
+
+                <div class="prefooter-location">
+                    <span>Ankleshwar,Nana Borsara, Gujarat 394115, India</span>
+                </div>
+
+                <div class="prefooter-btn">
+                    <button class="btn btn-book-now">Book your stay</button>
+                </div>
+            </div>
+         </div>
+
+        <!-- Instagram -->
+        <div class="instagram">
+            <div class="instagram-heading animate">
+                <h2>Follow Us On Instagram</h2>
+            </div>
+
+            <div class="instagram-gallery animate">
+                <div class="insta-grid">
+                    <a href="https://www.instagram.com/rose_garden_food/" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1535275226173-7ee8b465f0c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </a>
+
+                    <a href="https://www.instagram.com/rose_garden_food/" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1618449840665-9ed506d73a34?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </a>
+ 
+                    <a href="https://www.instagram.com/rose_garden_food/" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1549294413-26f195200c16?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </a>
+
+                    <a href="https://www.instagram.com/rose_garden_food/" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1596450514735-111a2fe02935?q=80&w=1111&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container animate">
+                <div class="footer-wrap">
+                    <div class="footer-heading address">
+                        <h4>Address</h4>
+
+                        <span class="location">Ankleshwar, Nana Borsara, Gujarat 394115, India</span>
                     </div>
 
-                    <div class="footer-group">
-                        <div class="links footer-links">
-                            <div class="footer-heading">Stay With Us</div>
-                            <ul>
-                                <li><a href="#">Dining</a></li>
-                                <li><a href="#">Weddings</a></li>
-                                <li><a href="#">Meetings & Events</a></li>
-                                <li><a href="#">Rooms & Suites</a></li>
-                                <li><a href="#">Amenities</a></li>
-                            </ul>
-                        </div>
+                    <div class="reservations">
+                        <h4>Reservations</h4>
 
-                        <div class="links help-center">
-                            <div class="footer-heading">Experience More</div>
-                            <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Franchise Inquiry</a></li>
-                            </ul>
-                        </div>
+                        <span class="number">(919) 8765 43210</span>
+                    </div>
+                </div>
 
-                        <div class="socials">
-                            <div class="footer-heading">Follow Us</div>
+                <div class="footer-wrap about">
+                    <div class="footer-heading about">
+                        <h4>About</h4>
+                            
+                        <ul class="footer-links">
+                            <li><a href="#">Blog & News</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Subscribe</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-wrap">
+                    <div class="footer-heading your-stay">
+                        <h4>Your Stay</h4>
+                            
+                        <ul class="footer-links">
+                            <li><a href="#">Our Menu</a></li>
+                            <li><a href="#">Amenities</a></li>
+                            <li><a href="#">Accomodations</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-wrap connect">
+                    <div class="footer-heading connect">
+                        <h4>Connect</h4>
+
+                        <div class="footer-socials">
+                            <span>
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
 
                             <span>
-                                <img src="../assets/img/icons/facebook.svg" alt="facebook">
-                            </span>
-                            <span>
-                                <img src="../assets/img/icons/instagram.svg" alt="instagram">
-                            </span>
-                            <span>
-                                <img src="../assets/img/icons/whatsapp.svg" alt="whatsapp">
-                            </span>
-                            <span>
-                                <img src="../assets/img/icons/twitter.svg" alt="twitter">
+                                <i class="fa-brands fa-x-twitter"></i>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-end">
+            <div class="footer-end animate">
                 <div class="copyright">
-                    <span>
-                        © 2025 Hotel Rose Garden. All Rights Reserved.
-                    </span>
+                    <span>© 2025 Hotel Rose Garden. All Rights Reserved.</span>
                 </div>
 
                 <div class="developer">
-                    <span>
-                        Powered by <span class="blue"><a href="#">Web Innovate</a></span>
-                    </span>
+                    <span>Powered by <a href="www.webinnovate.io">Web Innovate</a></span>
                 </div>
             </div>
         </footer>
-
     </div>
 
     <!-- Modal -->

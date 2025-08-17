@@ -8,6 +8,12 @@
 
 */
 
+:root {
+    --font: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-body-poppins: 'Poppins', sans-serif;
+}
+
 .mobile-logo {
     display: none;
 }
@@ -58,7 +64,6 @@
 
 /* Content Styles */
 .content-container {
-    background: #F2F2F2;
     height: 100% !important;
     padding: 0 50px 50px;
 }
@@ -108,6 +113,255 @@
     border-bottom-color: #151D24; /* reveal visible border */
 }
 
+/* 
+1. Prefooter
+2. Instagram
+3. Footer
+
+    Note: This section of css will be shared with other pages!
+*/
+
+.prefooter {
+    display: flex;
+    flex-direction: row;
+    height: 770px;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex: 1;
+}
+
+.prefooter-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.prefooter-image img {
+    width: 617px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.prefooter-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 600px;
+    height: 500px;
+    gap: 20px;
+}
+
+.prefooter-heading h2,
+.prefooter-location span {
+    font-family: var(--font-body-poppins);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.instagram-heading h2 {
+    font-family: var(--font);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.prefooter-heading {
+    width: 300px;
+}
+
+.prefooter-location {
+    width: 235px;
+}
+
+.prefooter-heading h2 {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: lighter;
+}
+
+.prefooter-location span {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: lighter;
+}
+
+.prefooter-btn .btn {
+    font-size: 12px;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: var(--font-body-poppins);
+    width: 200px;
+    height: 40px;
+    border: 0.2px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s ease; /* smooth hover */
+}
+
+/* Hover effect */
+.prefooter-btn .btn:hover {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);  /* subtle dark background */
+    border-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px); /* slight lift */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Instagram Gallery Wrapper */
+.instagram-gallery {
+  margin-bottom: 40px;
+}
+
+.instagram-heading {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.instagram-heading h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+/* Gallery Grid */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 0 20px;
+}
+
+/* Image Wrapper */
+.insta-grid a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 3px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Images */
+.insta-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* square ratio */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 3px;
+}
+
+/* Hover Effects */
+.insta-grid a:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+.insta-grid a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    border: 0.2px solid rgba(0, 0, 0, 0.2);
+    font-family: var(--font-body-poppins);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10%; /* gives a visual margin inside */
+    box-sizing: border-box;
+    margin: 80px 0;
+}
+
+
+.footer-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-wrap .footer-heading h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.location,
+.number {
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.footer-links li {
+    padding: 7px 0;
+    font-size: 14px;
+}
+
+
+.connect {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-socials {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.footer-links li a {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.footer-end {
+    width: 100%;
+    padding: 0 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px 0;
+    font-size: 14px;
+}
+
+/* Add subtle underline on hover */
+.footer-end .developer a,
+.footer-links li a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none; /* remove default underline */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Animated underline for both */
+.footer-end .developer a::after,
+.footer-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -2px; /* distance from text */
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: width 0.3s ease;
+}
+
+.footer-end .developer a:hover,
+.footer-links li a:hover {
+    color: rgba(0, 0, 0, 0.9); /* subtle color change on hover */
+}
+
+.footer-end .developer a:hover::after,
+.footer-links li a:hover::after {
+    width: 100%; /* expand underline on hover */
+}
 
 /* Animation */
 .animate {
