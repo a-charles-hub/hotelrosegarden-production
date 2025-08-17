@@ -10,6 +10,7 @@
     <!-- Local CSS -->
     <link rel="stylesheet" href="src/styles/client/main.css">
     <link rel="stylesheet" href="src/styles/client/layout.css">
+    <link rel="stylesheet" href="src/styles/client/layout-media-query.css">
     <link rel="stylesheet" href="src/styles/client/main-media-query.css">
     <!-- Favicon -->
     <link rel="icon" href="public/assets/img/logo.png">
@@ -49,7 +50,7 @@
                         <ul class="nav-links left">
                             <li><a href="index.php">Overview</a></li>
                             <li><a href="public/pages/our-menu.php">Menu</a></li>
-                            <li><a href="../../public/pages/accomodations.php">Accomodations</a></li>
+                            <li><a href="public/pages/accomodations.php">Accomodations</a></li>
                             <li><a href="public/pages/amenities.php">Amenities</a></li>
                         </ul>    
                         
@@ -106,12 +107,6 @@
                 <p class="history paragraph-2 animate">From humble beginnings, our journey has been one of passion and dedication—committed to serving dishes made with the finest ingredients, steeped in tradition, and crafted with love. Every corner of our hotel echoes this story, with our banquet hall, serene prayer spaces, and lush outdoor settings designed to offer moments of peace and joy for all who visit.</p>
 
                 <p class="history paragraph-3 animate">At Hotel Rose Garden, we believe in the power of food to bring people together, whether for a quiet meal or a grand celebration. As we continue to grow, we remain deeply rooted in the values of hospitality and the timeless beauty of Indian culture.</p>
-            </div>
-
-            <div class="hotel-info animate">
-                <p class="hotel-location">Ankleshwar, Nana Borsara, Gujarat 394115, India</p>
-
-                <p class="hotel-contact">+91 98765 43210</p>
             </div>
         </div>
 
@@ -235,170 +230,125 @@
             </div>
         </div>
 
-        <!-- Instagram Gallery -->
-        <div class="instagram-gallery-container">
-            <div class="instagram-gallery animate">
-                <div class="title-wrap">
-                    <h4 class="descriptor">What's Happening</h4>
-                    <h2 class="title">Instagram Gallery</h2>
+        <!-- Prefooter -->
+         <div class="prefooter animate">
+            <div class="prefooter-image">
+                <img src="https://images.unsplash.com/photo-1535827841776-24afc1e255ac?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" loading="lazy">
+            </div>
+
+            <div class="prefooter-details">
+                <div class="prefooter-heading">
+                    <h2>Enjoy Your Stay At Hotel Rose Garden</h2>
                 </div>
 
-                <div class="cards-container">
-                    <div class="cards animate">
-                        <div class="card">
-                            <img src="https://i.pinimg.com/originals/fe/33/28/fe3328080d12ae8f28a3c7e7fd4f946f.jpg" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://th.bing.com/th/id/R.1a32300a1f3d69708d49b08c6eb89693?rik=lt4UftWfwKgojw&pid=ImgRaw&r=0" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://wallpaperaccess.com/full/1317096.jpg" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://images.pexels.com/photos/958546/pexels-photo-958546.jpeg?cs=srgb&dl=food-healthy-vegetables-958546.jpg&fm=jpg" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://s4.scoopwhoop.com/dan/spicyfood1/15.jpg" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://wallpapercave.com/wp/wp7137084.jpg" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://th.bing.com/th/id/R.8a37848f44b93aa9e7f924a937660259?rik=%2bw9XHaoDdl5o%2fQ&pid=ImgRaw&r=0" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://www.cricketbio.com/wp-content/uploads/2019/02/Playing-Cricket-Games-With-Your-Children-Can-Improve-Their-Life-at-School.jpg" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://sukhis.com/app/uploads/2022/04/image3-4.jpg" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://th.bing.com/th/id/R.50a981d1df95ddc3b6b174244f86f309?rik=FoHJGxVjvJ8uLQ&riu=http%3a%2f%2fstacyhart.com%2fwp-content%2fuploads%2f2017%2f12%2f14-14393-post%2fthe-knot-real-wedding-indian-wedding-events-cherished-philadelphia-wedding-photographer-deerfield-wedding-photos_0074.jpg&ehk=eoKDwT92s6HCoQpyhoVzgsdMlaWSfY4Y%2bYQTwMig590%3d&risl=&pid=ImgRaw&r=0" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://lh5.googleusercontent.com/p/AF1QipNCSnkbwgun6igcdoMmF_4nyCOb-f255CV1qtYp=w408-h306-k-no" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://d1vp8nomjxwyf1.cloudfront.net/wp-content/uploads/sites/9/2019/11/29145839/Quarto-Twin-2.jpg" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://img.freepik.com/premium-photo/indian-family-eating-food-dining-table-home-restaurant-having-meal-together_466689-12715.jpg?w=826" alt="" loading="lazy">
-                        </div>
-                        <div class="card">
-                            <img src="https://www.visitdubai.com/-/media/gathercontent/article/d/dubais-romantic-restaurants/fallback-image/dubais-romantic-restaurants-hero-eventorganiser-aug-2022.jpg" alt="" loading="lazy">
-                        </div>
-                    </div>
+                <div class="prefooter-location">
+                    <span>Ankleshwar,Nana Borsara, Gujarat 394115, India</span>
+                </div>
+
+                <div class="prefooter-btn">
+                    <button class="btn btn-book-now">Book your stay</button>
+                </div>
+            </div>
+         </div>
+
+        <!-- Instagram -->
+        <div class="instagram">
+            <div class="instagram-heading animate">
+                <h2>Follow Us On Instagram</h2>
+            </div>
+
+            <div class="instagram-gallery animate">
+                <div class="insta-grid">
+                    <a href="https://www.instagram.com/rose_garden_food/" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1535275226173-7ee8b465f0c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </a>
+
+                    <a href="https://www.instagram.com/rose_garden_food/" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1618449840665-9ed506d73a34?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </a>
+ 
+                    <a href="https://www.instagram.com/rose_garden_food/" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1549294413-26f195200c16?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </a>
+
+                    <a href="https://www.instagram.com/rose_garden_food/" target="_blank">
+                        <img src="https://images.unsplash.com/photo-1596450514735-111a2fe02935?q=80&w=1111&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- Footer -->
-        <div class="footer-top animate">
-            <div class="footer">
-                <div class="title-wrap">
-                    <h4 class="descriptor
-                    ">Hotel Rose Garden</h4>
-                    <h3 class="title">Located In The Heart of Borsara</h3>
-                </div>
+        <footer>
+            <div class="footer-container animate">
+                <div class="footer-wrap">
+                    <div class="footer-heading address">
+                        <h4>Address</h4>
 
-                <div class="contact-info">
-                    <div class="phone"><i class="fa-solid fa-phone"></i> +919876543210</div>
-                    <div class="contact-email"><i class="fa-solid fa-envelope"></i> contact@hotelrosegarden.in</div>
-                    <div class="location"><i class="fa-solid fa-location-dot"></i> Ankleshwar, Nana Borsara, Gujarat 394115, India</div>
-                </div>
-
-                <div class="google-maps">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231.97183124760082!2d73.00518893372956!3d21.5253666500026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be03dc03603a155%3A0x9cd3b6726918272d!2sHotel%20Rose%20Garden!5e0!3m2!1sen!2sca!4v1742707428255!5m2!1sen!2sca" 
-                        allowfullscreen 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Google Maps view of Hotel Rose Garden in Borsara, Gujarat">
-                    </iframe>
-                </div>
-                
-            </div>
-        </div>
-
-        <footer class="footer-container animate">
-            <div class="footer-wrap">
-                <div class="wrap">
-                    <div class="footer-info">
-                        <div class="logo">
-                            <img src="public/assets/img/logo.png" alt="">
-                        </div>
-
-                        <div class="footer-hotel-info">
-                            <div class="footer-heading">Hotel Rose Garden</div>
-                            <span class="sub-heading address">
-                                <i class="fa-solid fa-location-dot"></i>Ankleshwar, Nana Borsara
-                                Gujarat 394115, India
-                            </span>
-                            <span class="sub-heading email">
-                                <i class="fa-solid fa-envelope"></i>contact@hotelrosegarden.in
-                            </span>
-                            <span class="sub-heading phone-number">
-                                <i class="fa-solid fa-phone"></i>+91 98765 43210
-                            </span>
-                        </div>
+                        <span class="location">Ankleshwar, Nana Borsara, Gujarat 394115, India</span>
                     </div>
 
-                    <div class="footer-group">
-                        <div class="links footer-links">
-                            <div class="footer-heading">Stay With Us</div>
-                            <ul>
-                                <li><a href="#">Dining</a></li>
-                                <li><a href="#">Weddings</a></li>
-                                <li><a href="#">Meetings & Events</a></li>
-                                <li><a href="#">Rooms & Suites</a></li>
-                                <li><a href="#">Amenities</a></li>
-                            </ul>
-                        </div>
+                    <div class="reservations">
+                        <h4>Reservations</h4>
 
-                        <div class="links help-center">
-                            <div class="footer-heading">Experience More</div>
-                            <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Franchise Inquiry</a></li>
-                            </ul>
-                        </div>
+                        <span class="number">(919) 8765 43210</span>
+                    </div>
+                </div>
 
-                        <div class="socials">
-                            <div class="footer-heading">Follow Us</div>
+                <div class="footer-wrap about">
+                    <div class="footer-heading about">
+                        <h4>About</h4>
+                            
+                        <ul class="footer-links">
+                            <li><a href="#">Blog & News</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Subscribe</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-wrap">
+                    <div class="footer-heading your-stay">
+                        <h4>Your Stay</h4>
+                            
+                        <ul class="footer-links">
+                            <li><a href="#">Our Menu</a></li>
+                            <li><a href="#">Amenities</a></li>
+                            <li><a href="#">Accomodations</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-wrap connect">
+                    <div class="footer-heading connect">
+                        <h4>Connect</h4>
+
+                        <div class="footer-socials">
+                            <span>
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
 
                             <span>
-                                <img src="public/assets/img/icons/facebook.svg" alt="facebook">
-                            </span>
-                            <span>
-                                <img src="public/assets/img/icons/instagram.svg" alt="instagram">
-                            </span>
-                            <span>
-                                <img src="public/assets/img/icons/whatsapp.svg" alt="whatsapp">
-                            </span>
-                            <span>
-                                <img src="public/assets/img/icons/twitter.svg" alt="twitter">
+                                <i class="fa-brands fa-x-twitter"></i>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-end">
+            <div class="footer-end animate">
                 <div class="copyright">
-                    <span>
-                        © 2025 Hotel Rose Garden. All Rights Reserved.
-                    </span>
+                    <span>© 2025 Hotel Rose Garden. All Rights Reserved.</span>
                 </div>
 
                 <div class="developer">
-                    <span>
-                        Powered by <span class="blue"><a href="#">Web Innovate</a></span>
-                    </span>
+                    <span>Powered by <a href="www.webinnovate.io">Web Innovate</a></span>
                 </div>
             </div>
         </footer>
     </div>
+
 
     <!-- Modal -->
     <div class="modal">

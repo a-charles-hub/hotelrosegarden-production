@@ -34,55 +34,6 @@
     .images img.tall {
         height: 140px;
     }   
-
-    /* Rooms */
-
-    .room {
-        width: 300px;
-        height: auto;
-    }
-
-    .room-card {
-        height: fit-content;
-    }
-
-    .room-image img {
-        width: 300px;
-        height: 100%;
-    }
-
-    .room-title span {
-        font-size: 16px;
-        font-family: var(--font-body-poppins);
-    }
-
-    .room-description span {
-        font-size: 14px;
-        font-family: var(--font-body-poppins);
-        color:rgba(0,0,0,0.8);
-    }
-
-    .room-descriptor span {
-        font-size: 14px;
-        font-family: var(--font-body-poppins);
-        color:rgba(0,0,0,0.7);
-    }
-
-    .room-price span {
-        font-size: 16px;
-        font-family: var(--font-body-poppins);
-    }
-
-    .room-details .wrap {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        align-items: start;
-    }
-
-    .room-heading h2 {
-        font-size: clamp(28px, 2vw, 32px) !important;
-    }
 }
 
 @media screen and (max-width: 992px) {
@@ -104,42 +55,10 @@
         padding: 10px 0;
     }
 
-    .room-image img {
-        border-radius: 10px;
-    }
-
-    .room-heading {
-        display: flex;
-        justify-content: start;
-    }
-
     .rooms {
-        padding: 20px 0;
-    }
-
-    .room {
-        width: 100%;
-    }
-    
-    .room-card {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        margin: 5px;
-    }
-
-    .room-details {
-        width: 100%;
-        margin-right: 5px;
-    }
-
-    .room-details .wrap {
-        display: flex;
-        flex-direction: row !important;
-    }
-
-    .room:hover {
-        transform: scale(0.99);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* default 2 columns */
+        justify-content: center;
     }
 }
 
@@ -196,19 +115,6 @@
     .images img.tall {
         height: 100px;
     }   
-
-    .room-image img {
-        width: 200px;
-    }
-
-    .room-description span {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;        /* number of lines to show */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 400px;
-    }
 }
 
 @media (max-width: 600px) {
@@ -220,35 +126,6 @@
         gap: 3px;
     }
 
-    .room-heading h2 {
-        font-size: clamp(18px, 2vw, 22px) !important;
-    }
-
-    .room-title span,
-    .room-price span {
-        font-size: 12px !important;
-    }
-
-    .room-description span,
-    .room-descriptor span {
-        font-size: 10px !important;
-    }
-
-    .room-amenities .text {
-        display: none;
-    }
-
-    .room-image img {
-        width: 120px;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    .room-details {
-        gap: 10px;
-    }
-
     .introduction-gallery .images img {
         width: 120px;
         height: 80px;
@@ -257,4 +134,9 @@
     .images img.tall {
         height: 100px;
     }  
+
+    .rooms {
+        display: flex;
+        flex-direction: column;
+    }
 }

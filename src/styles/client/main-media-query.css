@@ -213,24 +213,6 @@
         font-weight: 400;
     }
 
-    .our-menu button {
-        border: 1px solid #fff;
-        background: none;
-        outline: none;
-        font-size: 16px;
-        font-family: var(--font-body);
-        border-radius: 5px;
-        width: 150px;
-        height: 40px;
-        color: #fff;
-    }
-
-    /* Pagination */
-    .pagination .prev-text,
-    .pagination .next-text {
-        display: none;
-    }
-
     /* Hotel History */
     .history {
         font-size: 14px;
@@ -362,164 +344,14 @@
     .accomodations-container {
         padding: 25px 0;
         padding: 0 1em;
+        margin-top: 20px;
+        border-bottom: 0.2px solid rgb(0, 0, 0, 0.1);
     }
 
     .accomodations {
         display: flex;
         flex-direction: column;
         border: none;
-    }
-
-    /* Instagram Gallery */
-    .instagram-gallery-container {
-        padding: 25px 0;
-        background: #f8f8f8;
-    }
-
-    .cards-container .cards {
-        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns */
-    }
-
-    .cards .card:first-child,
-    .cards .card:last-child {
-        grid-column: span 1; /* Make first and last cards take up only 1 column */
-        grid-row: span 1; /* Make first and last cards take up only 1 row */
-    }
-
-    /* Footer Top */
-    .footer-top {
-        padding-bottom: 0;
-    }
-
-    .footer {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .footer-wrap .wrap {
-        width: 100vw !important;
-    }
-
-    .footer-group {
-        padding: 0 20px;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: space-between;
-        
-    }
-
-    .contact-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: start;
-        font-size: 12px;
-        gap: 2em;
-    }
-    
-    .google-maps {
-        position: relative;
-        width: 100%;
-        padding: 0 1em;
-        transform: none;
-        left: 0;
-        right: 0;
-        top: 0;
-        margin: 20px 0;
-    }
-
-    .google-maps iframe {
-        width: 100%; /* Make the iframe responsive */
-        height: 300px; /* Adjust the height for smaller screens */
-        border-radius: 8px; /* Slightly adjust border radius for mobile */
-    }
-
-    .title-wrap .title {
-        font-size: clamp(18px, 4vw, 24px);
-    }
-
-    /* Footer */
-    .footer-container {
-        padding: 25px 1em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .footer-hotel-info {
-        display: flex;
-        align-items: start;
-    }
-
-    .footer-info .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .footer-links,
-    .help-center,
-    .socials,
-    .footer-hotel-info {
-        text-align: start !important;
-    }
-
-    .footer .title-wrap .title {
-        margin: 10px 20px;
-    }
-
-    .wrap {
-        display: flex;
-        flex-direction: column !important;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .footer-info {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        order: 2;
-        padding: 0 20px;
-        justify-content: start;
-    }
-
-    .socials span {
-        margin-right: 0.5em;
-    }
-
-    .featured-menu-options {
-        display: none;
-    }
-
-    /* Footer End */
-    .footer-end {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: none;
-        gap: 0.5em;
-        order: 3;
-    }
-
-    .copyright {
-        position: relative;
-        text-align: center; 
-        width: 100%;
-
-    }
-
-    .developer {
-        margin-left: 0;
-        padding: 0;
-    }
-
-    .developer .blue a {
-        color: #bffcf9 !important;
     }
 }   
 
@@ -551,50 +383,12 @@
     .nav-links li a {
         font-size: clamp(16px, 2vw, 20px) !important;
     }
-
-    .socials img {
-        width: 24px;
-        height: 24px;
-    }
-
-    .footer-info {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding: 0 20px;
-        justify-content: center;
-    }
-
-    .footer-hotel-info {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .footer-group {
-        order: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .footer-links,
-    .help-center,
-    .socials,
-    .footer-hotel-info {
-        text-align: center !important;
-    }
 }
 
 @media (max-width: 375px) {
     /* Navbar & Header */
     .background-container {
         height: 80vh;
-    }
-
-    .content-container {
-        border: 1px solid green;
     }
 
     .card-container {
