@@ -320,6 +320,10 @@ footer {
     color: rgba(0, 0, 0, 0.7);
 }
 
+.reservations .number {
+    color: #151D24;
+}
+
 .footer-end {
     width: 100%;
     padding: 0 10%;

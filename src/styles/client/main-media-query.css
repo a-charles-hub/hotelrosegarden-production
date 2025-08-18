@@ -362,6 +362,16 @@
         padding: 0;
     }
 
+    .hotel-history-container .title-wrap {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hotel-history-container .title-wrap .title {
+        margin-bottom: 30px !important;
+        width: 60%;
+    }
+
     .header-wrap .subtitle {
         font-size: clamp(20px, 2vw, 28px) !important;
         margin: 0;
