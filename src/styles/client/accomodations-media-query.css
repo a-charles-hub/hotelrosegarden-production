@@ -115,11 +115,6 @@
     .images img.tall {
         height: 100px;
     }   
-
-    .rooms {
-        border: 1px solid red;
-        margin-bottom: 40px;
-    }
 }
 
 @media (max-width: 600px) {
