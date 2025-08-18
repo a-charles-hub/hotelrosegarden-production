@@ -218,7 +218,7 @@ ul {
 
 .hotel-history-container .title-wrap .title {
     font-size: 24px;
-    font-family: var(--font-body-poppins);
+    font-family: var(--font);
     color: rgba(0, 0, 0, 0.8);
 }
 
